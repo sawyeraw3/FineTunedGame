@@ -28,7 +28,7 @@ public class WaveMovement : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other) {
-		if (other.gameObject.layer == 9){
+		if (other.gameObject.layer == 0 || other.gameObject.layer == 1){
 			Destroy (gameObject);
 		}
 	}
