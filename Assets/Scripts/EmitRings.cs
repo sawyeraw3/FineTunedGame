@@ -9,7 +9,8 @@ public class EmitRings : MonoBehaviour {
 	public float curFrequency = 10f;
 	public int numParts;
 	public int numColorsInLevel;
-	public float emitTimer;
+	public float emitDelay;
+	public float emitLifeSpan;
 	public float maxDamageDealt;
 
 	float timer;
@@ -20,7 +21,7 @@ public class EmitRings : MonoBehaviour {
 	// Use this for initialization
 	void Start()
 	{
-		timer = emitTimer;
+		timer = emitDelay;
 		freqText = GameObject.FindGameObjectWithTag ("HUD").GetComponentInChildren<Text> ();
 		freqText.text = "Hz: " + curFrequency.ToString();
 	}
@@ -37,7 +38,7 @@ public class EmitRings : MonoBehaviour {
 
 		timer += Time.deltaTime;
 
-		if (Input.GetButtonDown("Fire1") && timer >= emitTimer){
+		if (Input.GetButtonDown("Fire1") && timer >= emitDelay){
 			int offset = 0;
 			center = transform.position;
 			for (int i = 0; i < numParts; i++)
@@ -50,8 +51,12 @@ public class EmitRings : MonoBehaviour {
 
 				newBall = Instantiate(ringObjectPart, pos, travelDir) as GameObject;
 
-				newBall.GetComponent<DealDamage> ().damageDealt = maxDamageDealt;
+				DealDamage dealDamage = newBall.GetComponent<DealDamage> ();
+				dealDamage.damageDealt = maxDamageDealt;
+				dealDamage.deathDelay = emitLifeSpan;
+
 				newBall.GetComponent<WaveMovement> ().frequency = curFrequency;
+
 				setColor (newBall, curFrequency);
 
 			}

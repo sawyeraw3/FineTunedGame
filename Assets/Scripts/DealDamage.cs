@@ -8,7 +8,7 @@ public class DealDamage : MonoBehaviour {
 	float delta;
 	Color col;
 	Renderer rend;
-	float deathDelay = 5f;
+	public float deathDelay = 5f;
 
 	// Use this for initialization
 	void Start () {
