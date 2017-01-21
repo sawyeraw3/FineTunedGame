@@ -26,4 +26,10 @@ public class WaveMovement : MonoBehaviour {
 		pos += Time.deltaTime * transform.forward * moveSpeed;
 		transform.position = pos + axis * Mathf.Sin (Time.time * frequency) * magnitude;
 	}
+
+	void OnTriggerEnter(Collider other) {
+		if (other.gameObject.layer == 9){
+			Destroy (gameObject);
+		}
+	}
 }

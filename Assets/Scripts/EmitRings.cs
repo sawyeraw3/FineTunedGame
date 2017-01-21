@@ -8,9 +8,8 @@ public class EmitRings : MonoBehaviour {
 	public GameObject ringObjectPart;
 	public float curFrequency = 10f;
 	public int numParts;
-	public float emitSpeed;
-	public float emitFrequency;
-
+	public int numColorsInLevel;
+	public float emitTimer;
 	public float maxDamageDealt;
 
 	float timer;
@@ -21,7 +20,7 @@ public class EmitRings : MonoBehaviour {
 	// Use this for initialization
 	void Start()
 	{
-		timer = emitFrequency;
+		timer = emitTimer;
 		freqText = GameObject.FindGameObjectWithTag ("HUD").GetComponentInChildren<Text> ();
 		freqText.text = "Hz: " + curFrequency.ToString();
 	}
@@ -38,7 +37,7 @@ public class EmitRings : MonoBehaviour {
 
 		timer += Time.deltaTime;
 
-		if (Input.GetButtonDown("Fire1")){
+		if (Input.GetButtonDown("Fire1") && timer >= emitTimer){
 			int offset = 0;
 			center = transform.position;
 			for (int i = 0; i < numParts; i++)
