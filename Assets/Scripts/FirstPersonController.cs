@@ -22,7 +22,7 @@ public class FirstPersonController : MonoBehaviour {
 	
 	void Awake() {
 		rigidbody = GetComponent<Rigidbody> ();
-		capsuleBody = gameObject.transform.FindChild ("Body").gameObject;
+		capsuleBody = gameObject.transform.FindChild ("Capsule").gameObject;
 	}
 	
 	void Update() {

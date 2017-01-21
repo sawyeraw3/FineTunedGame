@@ -1,7 +1,7 @@
 # File produced by Open Asset Import Library (http://www.assimp.sf.net)
 # (assimp v3.0.1262)
 
-mtllib mainjoints.stl.obj.mtl
+mtllib main_joints.stl.obj.mtl
 
 # 33660 vertex positions
 v  -15.3447 9.77709 3.4919
