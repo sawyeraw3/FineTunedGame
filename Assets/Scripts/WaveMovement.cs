@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -28,6 +28,7 @@ public class WaveMovement : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other) {
+
 		if (other.gameObject.layer == 0){
 			Destroy (gameObject);
 		}
