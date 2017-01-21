@@ -8,12 +8,7 @@ public class FirstPersonController : MonoBehaviour {
 	public float mouseSensitivityY = 1;
 	public float minDistanceToGround = 1;
 	public float walkSpeed = 6;
-	public float runSpeed = 6;
-	public float Speed = 10f;
-	public bool canJump;
-	public float jumpForce = 220;
-	int groundedMask;
-	int planetNum;
+	GameObject capsuleBody;
 	
 	// System vars
 	bool grounded;
@@ -21,24 +16,26 @@ public class FirstPersonController : MonoBehaviour {
 	Vector3 moveAmount;
 	
 	Vector3 targetFlyAmount;
-
-	Vector3 smoothMoveVelocity;
-	float verticalLookRotation;
-	Transform cameraTransform;
 	Rigidbody rigidbody;
-	Animator anim;
+	Vector3 smoothMoveVelocity;
 	
 	
 	void Awake() {
-		cameraTransform = Camera.main.transform;
 		rigidbody = GetComponent<Rigidbody> ();
-		anim = GetComponent<Animator> ();
+		capsuleBody = gameObject.transform.FindChild ("Capsule").gameObject;
 	}
 	
 	void Update() {
 		
 		//groundedMask = transform.GetComponent<GravityBody> ().getPlanet ().layer;		
-		
+
+		// Look rotation:
+		/*
+		transform.Rotate(Vector3.up * CrossPlatformInputManager.GetAxis("Mouse X") * mouseSensitivityX);
+		verticalLookRotation += CrossPlatformInputManager.GetAxis("Mouse Y") * mouseSensitivityY;
+		verticalLookRotation = Mathf.Clamp(verticalLookRotation,-60,60);
+		*/
+
 		// Calculate movement:
 		float inputX = Input.GetAxisRaw("Horizontal");
 		float inputY = Input.GetAxisRaw("Vertical");
@@ -46,7 +43,9 @@ public class FirstPersonController : MonoBehaviour {
 		Vector3 moveDir = new Vector3(inputX,0, inputY);
 		if (moveDir.magnitude > 1)
 			moveDir = moveDir.normalized;
-		
+		if(moveDir.magnitude != 0)
+			capsuleBody.transform.rotation = Quaternion.LookRotation (moveDir);
+
 		Vector3 targetMoveAmount = Vector3.zero;
 		/*if(CrossPlatformInputManager.GetButton("LButton")){
 			targetMoveAmount = moveDir * runSpeed;
@@ -69,6 +68,7 @@ public class FirstPersonController : MonoBehaviour {
 		*/
 
 		// Grounded check
+		/*
 		Ray ray = new Ray(transform.position, -transform.up);
 		RaycastHit hit;
 		
@@ -78,7 +78,7 @@ public class FirstPersonController : MonoBehaviour {
 		}
 		else {
 			grounded = false;
-		}
+		}*/
 		
 	}
 	
