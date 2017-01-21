@@ -26,7 +26,6 @@ public class FirstPersonController : MonoBehaviour {
 	}
 	
 	void Update() {
-		
 		//groundedMask = transform.GetComponent<GravityBody> ().getPlanet ().layer;		
 
 		// Look rotation:
