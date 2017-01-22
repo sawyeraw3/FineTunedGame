@@ -19,7 +19,6 @@ public class FirstPersonController : MonoBehaviour {
 	Rigidbody rigidbody;
 	Vector3 smoothMoveVelocity;
 	
-	
 	void Awake() {
 		rigidbody = GetComponent<Rigidbody> ();
 		body = gameObject.transform.FindChild ("Body").gameObject;
