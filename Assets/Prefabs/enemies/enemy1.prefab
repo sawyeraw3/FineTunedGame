@@ -514,7 +514,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -532,7 +532,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -631,6 +631,7 @@ MonoBehaviour:
   timeBetweenHits: 3
   minDistanceToObject: 4
   attack: {fileID: 8300000, guid: 15c22e4fa21a0464cbf049f39dbd9517, type: 3}
+  destroy: {fileID: 8300000, guid: 684b6d466893bad47a0ab57d3f62dbee, type: 3}
 --- !u!114 &114581044750409020
 MonoBehaviour:
   m_ObjectHideFlags: 1

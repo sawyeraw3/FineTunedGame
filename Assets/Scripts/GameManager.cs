@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour {
 	public int waveEnemyIncrease;
 	public float difficultySpread = 10;
 	public float upgradeSpeed = 3;
+	public AudioClip newWave;
 	int totalEnemies = 0;
 	int enemiesSpawned = 0;
 	int whichSpawn = 0;
@@ -35,18 +36,23 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		timer += Time.deltaTime;
+		GameOverManager gmo = GetComponent<GameOverManager> ();
+		if (!gmo.gameOver) {
+			timer += Time.deltaTime;
 
-		if (enemiesSpawned < maxEnemies && timer > secBetweenSpawn) {
-			SpawnEnemies ();
-			timer = 0;
-		} else if (KillManager.kills == totalEnemies) {
-			enemiesSpawned = 0;
-			maxEnemies += waveEnemyIncrease;
-			totalEnemies += maxEnemies;
-			WaveManager.wave ++;
-
-			difficulty++;
+			if (enemiesSpawned < maxEnemies && timer > secBetweenSpawn) {
+				SpawnEnemies ();
+				timer = 0;
+			} else if (KillManager.kills == totalEnemies) {
+				enemiesSpawned = 0;
+				maxEnemies += waveEnemyIncrease;
+				totalEnemies += maxEnemies;
+				WaveManager.wave++;
+				AudioSource sound = GetComponentInChildren<AudioSource> ();
+				sound.clip = newWave;
+				sound.Play();
+				difficulty++;
+			}
 		}
 	}
 

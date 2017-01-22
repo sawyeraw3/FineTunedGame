@@ -8,6 +8,7 @@ public class EnemyMovement : MonoBehaviour {
 	public int damagePerHit;
 	public float timeBetweenHits;
 	public float minDistanceToObject;
+	float minDistanceToMaster;
 	public AudioClip attack;
 	public AudioClip destroy;
 
@@ -21,6 +22,7 @@ public class EnemyMovement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		minDistanceToMaster = minDistanceToObject * 1.5f;
 		vars = GameObject.Find("LevelManager").GetComponent<EnemyVars> ();
 		agent = GetComponent<NavMeshAgent> ();
 
@@ -33,7 +35,6 @@ public class EnemyMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		GameManager gm = GameObject.Find ("LevelManager").GetComponent<GameManager> ();
 		AudioSource sound = GetComponentInChildren<AudioSource> ();
 		timer += Time.deltaTime;
 
@@ -68,6 +69,7 @@ public class EnemyMovement : MonoBehaviour {
 				}
 			}
 		} else if (GameObject.FindGameObjectWithTag ("MasterPylon")) {
+			minDistanceToObject = minDistanceToMaster;
 			target = GameObject.FindGameObjectWithTag ("MasterPylon");
 			agent.destination = target.transform.position;
 			agent.Resume ();

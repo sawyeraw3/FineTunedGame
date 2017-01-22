@@ -80,7 +80,8 @@ public class EmitRings : MonoBehaviour {
 
 
 			}
-			AudioSource n = new AudioSource ();
+			GameObject noiseMaker = Instantiate (new GameObject (), center, Quaternion.identity);
+			AudioSource n = noiseMaker.AddComponent<AudioSource> ();
 			n.transform.position = center;
 			n.clip = noise.clip;
 			n.pitch = 1 + (1.5f * ((curFrequency / 100) - 0.15f));
@@ -110,32 +111,26 @@ public class EmitRings : MonoBehaviour {
 			rend.material.SetColor ("_Color", gm.Blue);
 			freqText.color = gm.Blue;
 			return gm.Blue;
-			break;
 		case 15:
 			rend.material.SetColor ("_Color", gm.Cyan);
 			freqText.color = gm.Cyan;
 			return gm.Cyan;
-			break;
 		case 20:
 			rend.material.SetColor ("_Color", gm.Green);
 			freqText.color = gm.Green;
 			return gm.Green;
-			break;
 		case 25:
 			rend.material.SetColor ("_Color", gm.Orange);
 			freqText.color = gm.Orange;
 			return gm.Orange;
-			break;
 		case 30:
 			rend.material.SetColor ("_Color", gm.Red);
 			freqText.color = gm.Red;
 			return gm.Red;
-			break;
 		case 35:
 			rend.material.SetColor ("_Color", gm.Pink);
 			freqText.color = gm.Pink;
 			return gm.Pink;
-			break;
 		}
 		return Color.black;
 	}
