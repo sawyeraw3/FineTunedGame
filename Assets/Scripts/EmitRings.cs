@@ -21,6 +21,7 @@ public class EmitRings : MonoBehaviour {
 	float timer;
 	Vector3 center;
 	Text freqText;
+	Slider freqIndicator;
 	GameManager gm;
 
 
@@ -29,6 +30,7 @@ public class EmitRings : MonoBehaviour {
 		gm = GameObject.Find ("LevelManager").GetComponent<GameManager>();
 		timer = emitDelay;
 		freqText = GameObject.FindGameObjectWithTag ("HUD").GetComponentInChildren<Text> ();
+		freqIndicator = GameObject.Find ("Indicator").GetComponent<Slider>();
 		playerBody = GameObject.Find ("Joints");
 		freqText.text = "Hz: " + curFrequency.ToString();
 		ballSpawn = gameObject.transform.FindChild ("BallSpawn").gameObject;
@@ -42,10 +44,12 @@ public class EmitRings : MonoBehaviour {
 		if (Input.GetButtonDown("Fire2") && curFrequency < 35) {
 			curFrequency += 5;
 			freqText.text = "Hz: " + curFrequency.ToString();
+			freqIndicator.value = (curFrequency / 5) - 2;
 			setColor (playerBody, curFrequency);
 		} else if (Input.GetButtonDown("Fire3") && curFrequency > 10) {
 			curFrequency -= 5;
 			freqText.text = "Hz: " + curFrequency.ToString();
+			freqIndicator.value = (curFrequency / 5) - 2;
 			setColor (playerBody, curFrequency);
 		}
 
