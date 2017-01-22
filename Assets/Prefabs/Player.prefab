@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4234070604247240}
-  m_Layer: 8
+  m_Layer: 1
   m_Name: main__structure.stl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35,7 +35,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4031912753961318}
   - component: {fileID: 82209406011094340}
-  m_Layer: 8
+  m_Layer: 1
   m_Name: BallSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ GameObject:
   - component: {fileID: 4717723998717644}
   - component: {fileID: 33115506692807376}
   - component: {fileID: 23629927866818874}
-  m_Layer: 8
+  m_Layer: 1
   m_Name: Highlights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,9 @@ GameObject:
   - component: {fileID: 114322940632722558}
   - component: {fileID: 114344068168630246}
   - component: {fileID: 208721011313594122}
-  m_Layer: 8
+  - component: {fileID: 135214847855141890}
+  - component: {fileID: 114413447642373446}
+  m_Layer: 1
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -86,7 +88,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4050967902239394}
-  m_Layer: 8
+  m_Layer: 1
   m_Name: main_joints.stl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +104,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4189372829585014}
   - component: {fileID: 81812647580970812}
-  m_Layer: 8
+  m_Layer: 1
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +119,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4554832246573130}
-  m_Layer: 8
+  m_Layer: 1
   m_Name: main__highlights.stl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,7 +136,7 @@ GameObject:
   - component: {fileID: 4797144328415072}
   - component: {fileID: 33189512156156204}
   - component: {fileID: 23154382438046294}
-  m_Layer: 8
+  m_Layer: 1
   m_Name: Joints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,7 +151,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4883432643194860}
-  m_Layer: 8
+  m_Layer: 1
   m_Name: spider dude
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,7 +169,7 @@ GameObject:
   - component: {fileID: 20206295151960658}
   - component: {fileID: 92369861355378680}
   - component: {fileID: 124883100977067928}
-  m_Layer: 8
+  m_Layer: 1
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -185,7 +187,7 @@ GameObject:
   - component: {fileID: 33888868038819864}
   - component: {fileID: 23901941514934212}
   - component: {fileID: 65483642112214958}
-  m_Layer: 8
+  m_Layer: 1
   m_Name: Structure
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -320,7 +322,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1307866180923958}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.4, y: 6.49, z: -4.74}
+  m_LocalPosition: {x: 32.9, y: -0.72, z: -4.74}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4322703365477582}
@@ -650,6 +652,18 @@ MonoBehaviour:
   mouseSensitivityY: 1
   minDistanceToGround: 1
   walkSpeed: 15
+--- !u!114 &114413447642373446
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1307866180923958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecff49a6f0d07384cb9cf6ae31386955, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stun: {fileID: 8300000, guid: 42922acd60044694d9e636b8e48e4e2f, type: 3}
 --- !u!124 &124883100977067928
 Behaviour:
   m_ObjectHideFlags: 1
@@ -657,6 +671,18 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1679929331725856}
   m_Enabled: 1
+--- !u!135 &135214847855141890
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1307866180923958}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 7.5
+  m_Center: {x: -0.67, y: 0.72, z: 0}
 --- !u!208 &208721011313594122
 NavMeshObstacle:
   m_ObjectHideFlags: 1
