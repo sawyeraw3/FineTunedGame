@@ -8,7 +8,7 @@ public class UILockDir : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		Quaternion startRot = gameObject.transform.rotation;
-		rot.Set(startRot.eulerAngles.x, -90f, startRot.eulerAngles.z, startRot.w);
+		rot.Set(startRot.eulerAngles.x, 90f, startRot.eulerAngles.z, startRot.w);
 	}
 	
 	// Update is called once per frame

@@ -640,9 +640,8 @@ MonoBehaviour:
   numParts: 30
   numColorsInLevel: 0
   emitDelay: 1
-  emitLifeSpan: 1.25
-  maxDamageDealt: 10
-  waveSpeed: 10
+  emitLifeSpan: 1
+  waveSpeed: 12
 --- !u!114 &114344068168630246
 MonoBehaviour:
   m_ObjectHideFlags: 1
