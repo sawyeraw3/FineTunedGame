@@ -165,9 +165,10 @@ GameObject:
   - component: {fileID: 4572136873998546}
   - component: {fileID: 33368693649904918}
   - component: {fileID: 64011926302508208}
+  - component: {fileID: 114866402545897910}
   m_Layer: 11
   m_Name: pylon
-  m_TagString: Untagged
+  m_TagString: Pylon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -518,3 +519,15 @@ Light:
   m_BounceIntensity: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114866402545897910
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1988203456379606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43660abc8d81c2a4d911afd119a69c4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curHealth: 10
