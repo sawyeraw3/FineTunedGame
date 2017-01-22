@@ -24,12 +24,16 @@ public class EnemyMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		timer += Time.deltaTime;
 		if (!pylons[whichPylon]) {
 			whichPylon = Random.Range (0, pylons.Length);
 		}
 		if (Vector3.Distance (gameObject.transform.position, pylons [whichPylon].transform.position) <= minDistanceToObject) {
-			agent.Stop();
-			pylons [whichPylon].GetComponent<PylonHealth> ().TakeDamage (damagePerHit);
+			agent.Stop ();
+			if (timer >= timeBetweenHits) {
+				pylons [whichPylon].GetComponent<PylonHealth> ().TakeDamage (damagePerHit);
+				timer = 0f;
+			}
 		}
 	}
 }
