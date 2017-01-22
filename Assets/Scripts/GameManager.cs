@@ -38,7 +38,8 @@ public class GameManager : MonoBehaviour {
 	void SpawnEnemies()
 	{
 		whichSpawn = Random.Range (0, spawnPoints.Length);
-		Transform.Instantiate (enemy, spawnPoints [whichSpawn].transform.position, spawnPoints [whichSpawn].transform.rotation);
+		GameObject newEnemy = Instantiate (enemy, spawnPoints [whichSpawn].transform.position, spawnPoints [whichSpawn].transform.rotation) as GameObject;
+		newEnemy.GetComponentInChildren<Renderer> ().material.color = Color.yellow;
 		enemiesSpawned ++;
 	}
 }
