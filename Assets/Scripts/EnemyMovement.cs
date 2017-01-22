@@ -5,6 +5,11 @@ using UnityEngine.AI;
 
 public class EnemyMovement : MonoBehaviour {
 
+	public int damagePerHit;
+	public float timeBetweenHits;
+	public float minDistanceToObject;
+	float timer = 0;
+
 	GameObject[] pylons;
 	NavMeshAgent agent;
 	int whichPylon;
@@ -12,13 +17,29 @@ public class EnemyMovement : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		pylons = GameObject.FindGameObjectsWithTag ("Pylon");
-		whichPylon = Random.Range (0, pylons.Length);
 		agent = GetComponent<NavMeshAgent> ();
-		//agent.destination = goal.position;
+		whichPylon = Random.Range (0, pylons.Length);
+		agent.destination = pylons [whichPylon].transform.position;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		agent.destination = pylons[whichPylon].transform.position;
+		timer += Time.deltaTime;
+		if (pylons.Length > 0 && !pylons[whichPylon]) {
+			whichPylon = Random.Range (0, pylons.Length);
+			agent.destination = pylons [whichPylon].transform.position;
+		} else if (pylons.Length == 0) {
+			pylons = GameObject.FindGameObjectsWithTag ("MasterPylon");
+			whichPylon = Random.Range (0, pylons.Length);
+			agent.destination = pylons [whichPylon].transform.position;
+		}
+
+		if (Vector3.Distance (gameObject.transform.position, pylons [whichPylon].transform.position) <= minDistanceToObject) {
+			agent.Stop ();
+			if (timer >= timeBetweenHits) {
+				pylons [whichPylon].GetComponent<PylonHealth> ().TakeDamage (damagePerHit);
+				timer = 0f;
+			}
+		}
 	}
 }
