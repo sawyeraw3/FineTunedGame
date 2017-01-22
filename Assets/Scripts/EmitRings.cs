@@ -13,6 +13,7 @@ public class EmitRings : MonoBehaviour {
 	public float emitDelay;
 	public float emitLifeSpan;
 	public float maxDamageDealt;
+	public float waveSpeed = 5;
 
 	AudioSource noise;
 	GameObject playerBody;
@@ -62,6 +63,8 @@ public class EmitRings : MonoBehaviour {
 				Quaternion travelDir = Quaternion.LookRotation (dir);
 
 				newBall = Instantiate(ringObjectPart, pos, travelDir) as GameObject;
+				newBall.GetComponent<WaveMovement> ().moveSpeed = waveSpeed;
+				newBall.GetComponent<WaveMovement> ().frequency = emitLifeSpan * 10 * waveSpeed;
 
 				DealDamage dealDamage = newBall.GetComponentInChildren<DealDamage> ();
 				dealDamage.damageDealt = maxDamageDealt;
