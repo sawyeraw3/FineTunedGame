@@ -369,50 +369,20 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 224371202575235066, guid: 7ccec6d4915a5eb41b7b130395958221,
+    - target: {fileID: 224327631421441558, guid: 7ccec6d4915a5eb41b7b130395958221,
         type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: -73
+      propertyPath: m_AnchorMin.x
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 224103137270826296, guid: 7ccec6d4915a5eb41b7b130395958221,
+    - target: {fileID: 224327631421441558, guid: 7ccec6d4915a5eb41b7b130395958221,
         type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: -73
+      propertyPath: m_AnchorMax.x
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 224103137270826296, guid: 7ccec6d4915a5eb41b7b130395958221,
+    - target: {fileID: 224327631421441558, guid: 7ccec6d4915a5eb41b7b130395958221,
         type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: -42
-      objectReference: {fileID: 0}
-    - target: {fileID: 224371202575235066, guid: 7ccec6d4915a5eb41b7b130395958221,
-        type: 2}
-      propertyPath: m_SizeDelta.x
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 224103137270826296, guid: 7ccec6d4915a5eb41b7b130395958221,
-        type: 2}
-      propertyPath: m_SizeDelta.x
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 114484460224701146, guid: 7ccec6d4915a5eb41b7b130395958221,
-        type: 2}
-      propertyPath: m_FontData.m_Alignment
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114909186252632672, guid: 7ccec6d4915a5eb41b7b130395958221,
-        type: 2}
-      propertyPath: m_FontData.m_Alignment
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114351607814860852, guid: 7ccec6d4915a5eb41b7b130395958221,
-        type: 2}
-      propertyPath: m_FontData.m_Alignment
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114484460224701146, guid: 7ccec6d4915a5eb41b7b130395958221,
-        type: 2}
-      propertyPath: m_Text
-      value: 'Enemies:'
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7ccec6d4915a5eb41b7b130395958221, type: 2}
