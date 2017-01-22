@@ -11,14 +11,13 @@ public class EnemyMovement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		pylons = GameObject.FindGameObjectsWithTag ("Pylons");
+		pylons = GameObject.FindGameObjectsWithTag ("Pylon");
 		agent = GetComponent<NavMeshAgent> ();
-		//agent.destination = goal.position;
+		whichPylon = Random.Range (0, pylons.Length);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		whichPylon = Random.Range (0, pylons.Length);
 		agent.destination = pylons[whichPylon].transform.position;
 	}
 }
