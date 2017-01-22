@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour {
 	public readonly Color Blue = new Color((56f/255f),(63f/255f),(188f/255f), 1);
 	public readonly Color Cyan = new Color((1f/255f),1,1, 1);
 	public readonly Color Green = new Color((103f/255f),1,(100f/255f), 1);
-	public readonly Color Orange = new Color(1,(97f/255f),(53f/255f), 1);
+	public readonly Color Orange = new Color(1,(173f/255f),(53f/255f), 1);
 	public readonly Color Red = new Color(1,(49f/255f),(58f/255f), 1);
 	public readonly Color Pink = new Color(1,(36f/255f),(239f/255f), 1);
 
