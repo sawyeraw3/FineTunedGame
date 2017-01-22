@@ -7,12 +7,14 @@ public class EmitRings : MonoBehaviour {
 
 	public GameObject ringObjectPart;
 	public float curFrequency = 10f;
+	public float maxFrequency = 35f;
 	public int numParts;
 	public int numColorsInLevel;
 	public float emitDelay;
 	public float emitLifeSpan;
 	public float maxDamageDealt;
 
+	GameObject playerBody;
 	GameObject ballSpawn;
 	float timer;
 	Vector3 center;
@@ -24,6 +26,7 @@ public class EmitRings : MonoBehaviour {
 	{
 		timer = emitDelay;
 		freqText = GameObject.FindGameObjectWithTag ("HUD").GetComponentInChildren<Text> ();
+		playerBody = GameObject.Find ("Joints");
 		freqText.text = "Hz: " + curFrequency.ToString();
 		ballSpawn = gameObject.transform.FindChild ("BallSpawn").gameObject;
 		center = ballSpawn.transform.position;
@@ -34,9 +37,11 @@ public class EmitRings : MonoBehaviour {
 		if (Input.GetButtonDown("Fire2") && curFrequency < 35) {
 			curFrequency += 5;
 			freqText.text = "Hz: " + curFrequency.ToString();
+			setColor (playerBody, curFrequency);
 		} else if (Input.GetButtonDown("Fire3") && curFrequency > 10) {
 			curFrequency -= 5;
 			freqText.text = "Hz: " + curFrequency.ToString();
+			setColor (playerBody, curFrequency);
 		}
 
 		timer += Time.deltaTime;
@@ -73,21 +78,27 @@ public class EmitRings : MonoBehaviour {
 		{
 		case 10:
 			rend.material.SetColor ("_Color", Color.black);
+			freqText.color = Color.black;
 			break;
 		case 15:
 			rend.material.SetColor ("_Color", Color.grey);
+			freqText.color = Color.grey;
 			break;
 		case 20:
 			rend.material.SetColor ("_Color", Color.blue);
+			freqText.color = Color.blue;
 			break;
 		case 25:
 			rend.material.SetColor ("_Color", Color.green);
+			freqText.color = Color.green;
 			break;
 		case 30:
 			rend.material.SetColor ("_Color", Color.yellow);
+			freqText.color = Color.yellow;
 			break;
 		case 35:
 			rend.material.SetColor ("_Color", Color.red);
+			freqText.color = Color.red;
 			break;
 		}
 	}
