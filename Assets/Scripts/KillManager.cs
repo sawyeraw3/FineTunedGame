@@ -6,10 +6,8 @@ public class KillManager : MonoBehaviour {
 	
 	public static int kills;        // The player's score.
 	
-	
 	Text text;                      // Reference to the Text component.
-	
-	
+
 	void Awake ()
 	{
 		// Set up the reference.
