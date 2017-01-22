@@ -8,18 +8,17 @@ public class DealDamage : MonoBehaviour {
 	float delta;
 	Color col;
 	Renderer rend;
-	public float deathDelay = 5f;
+	public float deathDelay;
 
 	// Use this for initialization
 	void Start () {
-		rend = gameObject.GetComponent<Renderer> ();
-		Destroy (gameObject, deathDelay);
+		rend = gameObject.GetComponentInChildren<Renderer> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		delta = Time.deltaTime / deathDelay;
-
+		//Debug.Log (deathDelay);
 		if (damageDealt > 0) {
 			damageDealt -= (delta * damageDealt);
 		}
@@ -28,6 +27,11 @@ public class DealDamage : MonoBehaviour {
 		if ((col.a - delta) > 0f) {
 			col.a -= delta;
 			rend.material.color = col;
+		}
+	}
+	void OnTriggerEnter(Collider other) {
+		if (other.gameObject.layer == 0){
+			Destroy (transform.root.gameObject);
 		}
 	}
 }
