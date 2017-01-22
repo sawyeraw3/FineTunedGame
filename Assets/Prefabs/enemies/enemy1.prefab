@@ -397,7 +397,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damagePerHit: 5
   timeBetweenHits: 3
-  minDistanceToObject: 2
+  minDistanceToObject: 4
 --- !u!114 &114627268991589120
 MonoBehaviour:
   m_ObjectHideFlags: 1
