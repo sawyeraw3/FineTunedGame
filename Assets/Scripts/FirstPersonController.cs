@@ -8,7 +8,7 @@ public class FirstPersonController : MonoBehaviour {
 	public float mouseSensitivityY = 1;
 	public float minDistanceToGround = 1;
 	public float walkSpeed = 6;
-	GameObject capsuleBody;
+	GameObject body;
 	
 	// System vars
 	bool grounded;
@@ -22,7 +22,7 @@ public class FirstPersonController : MonoBehaviour {
 	
 	void Awake() {
 		rigidbody = GetComponent<Rigidbody> ();
-		capsuleBody = gameObject.transform.FindChild ("Body").gameObject;
+		body = gameObject.transform.FindChild ("Body").gameObject;
 	}
 	
 	void Update() {
@@ -43,7 +43,7 @@ public class FirstPersonController : MonoBehaviour {
 		if (moveDir.magnitude > 1)
 			moveDir = moveDir.normalized;
 		if(moveDir.magnitude != 0)
-			capsuleBody.transform.rotation = Quaternion.LookRotation (moveDir);
+			body.transform.rotation = Quaternion.LookRotation (moveDir);
 
 		Vector3 targetMoveAmount = Vector3.zero;
 		/*if(CrossPlatformInputManager.GetButton("LButton")){
