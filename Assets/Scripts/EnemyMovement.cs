@@ -7,6 +7,7 @@ public class EnemyMovement : MonoBehaviour {
 
 	public int damagePerHit;
 	public float timeBetweenHits;
+	public float minDistanceToObject;
 	float timer = 0;
 
 	GameObject[] pylons;
@@ -18,28 +19,17 @@ public class EnemyMovement : MonoBehaviour {
 		pylons = GameObject.FindGameObjectsWithTag ("Pylon");
 		agent = GetComponent<NavMeshAgent> ();
 		whichPylon = Random.Range (0, pylons.Length);
+		agent.destination = pylons [whichPylon].transform.position;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (pylons [whichPylon]) {
-			agent.destination = pylons [whichPylon].transform.position;
-		} else {
+		if (!pylons[whichPylon]) {
 			whichPylon = Random.Range (0, pylons.Length);
 		}
-	}
-
-	void OnCollisionEnter(Collision col) {
-		if (col.gameObject.tag == "Pylon") {
+		if (Vector3.Distance (gameObject.transform.position, pylons [whichPylon].transform.position) <= minDistanceToObject) {
 			agent.Stop();
-			if (timer >= timeBetweenHits) {
-				col.gameObject.GetComponent<PylonHealth> ().TakeDamage (damagePerHit);
-			}
+			pylons [whichPylon].GetComponent<PylonHealth> ().TakeDamage (damagePerHit);
 		}
 	}
-
-	void OnCollisionExit(Collision col) {
-		
-	}
-
 }
