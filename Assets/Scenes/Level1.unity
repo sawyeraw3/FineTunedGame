@@ -533,11 +533,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 638129273}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &657753097 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4814840538696736, guid: e26f997e599b69d49864c13d3a8f1b6e,
-    type: 2}
-  m_PrefabInternal: {fileID: 830812501}
 --- !u!1 &668259121
 GameObject:
   m_ObjectHideFlags: 0
@@ -694,6 +689,17 @@ Prefab:
     - target: {fileID: 4356146270495072, guid: e26f997e599b69d49864c13d3a8f1b6e, type: 2}
       propertyPath: m_LocalPosition.x
       value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114322940632722558, guid: e26f997e599b69d49864c13d3a8f1b6e,
+        type: 2}
+      propertyPath: ringObjectPart
+      value: 
+      objectReference: {fileID: 1847887620287816, guid: f985ef6fde6a65e4591c7c663b7a9f7c,
+        type: 2}
+    - target: {fileID: 114322940632722558, guid: e26f997e599b69d49864c13d3a8f1b6e,
+        type: 2}
+      propertyPath: emitLifeSpan
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e26f997e599b69d49864c13d3a8f1b6e, type: 2}
@@ -1306,7 +1312,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f653e9661c436d44891fb8251693b58b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goal: {fileID: 657753097}
 --- !u!195 &1414622637
 NavMeshAgent:
   m_ObjectHideFlags: 0

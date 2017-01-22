@@ -59,11 +59,13 @@ public class EmitRings : MonoBehaviour {
 
 				newBall = Instantiate(ringObjectPart, pos, travelDir) as GameObject;
 
-				DealDamage dealDamage = newBall.GetComponent<DealDamage> ();
+				DealDamage dealDamage = newBall.GetComponentInChildren<DealDamage> ();
 				dealDamage.damageDealt = maxDamageDealt;
 				dealDamage.deathDelay = emitLifeSpan;
 
-				newBall.GetComponent<WaveMovement> ().frequency = curFrequency;
+				WaveMovement wm = newBall.GetComponentInChildren<WaveMovement> ();
+				wm.frequency = curFrequency;
+				Destroy (newBall, emitLifeSpan);
 
 				setColor (newBall, curFrequency);
 
@@ -73,7 +75,7 @@ public class EmitRings : MonoBehaviour {
 	}
 
 	void setColor(GameObject go, float freq) {
-		Renderer rend = go.GetComponent<Renderer> ();
+		Renderer rend = go.GetComponentInChildren<Renderer> ();
 		int c = (int) freq;
 		switch (c)
 		{
