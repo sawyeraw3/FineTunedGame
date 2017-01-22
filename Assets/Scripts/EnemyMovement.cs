@@ -8,8 +8,10 @@ public class EnemyMovement : MonoBehaviour {
 	public int damagePerHit;
 	public float timeBetweenHits;
 	public float minDistanceToObject;
-	float timer = 0;
+	public AudioClip attack;
+	public AudioClip destroy;
 
+	float timer = 0;
 
 	GameObject target;
 	NavMeshAgent agent;
@@ -31,6 +33,8 @@ public class EnemyMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		GameManager gm = GameObject.Find ("LevelManager").GetComponent<GameManager> ();
+		AudioSource sound = GetComponentInChildren<AudioSource> ();
 		timer += Time.deltaTime;
 
 		if (!vars.allPylonsDestroyed) {
@@ -39,6 +43,9 @@ public class EnemyMovement : MonoBehaviour {
 					agent.Stop ();
 					if (target != null && timer >= timeBetweenHits) {
 						target.GetComponentInParent<PylonHealth> ().TakeDamage (damagePerHit);
+						sound.clip = attack;
+						sound.volume = 1;
+						sound.Play ();
 						timer = 0f;
 					}
 				}
@@ -46,6 +53,9 @@ public class EnemyMovement : MonoBehaviour {
 					if (target.GetComponent<PylonHealth> ().isDestroyed) {
 						vars.pylons.Remove (target.gameObject);
 						Destroy (target.gameObject);
+						sound.clip = destroy;
+						sound.volume = 1;
+						sound.Play ();
 						if (vars.pylons.Count != 0) {
 							whichPylon = Random.Range (0, vars.pylons.Count);
 							target = vars.pylons [whichPylon];
@@ -65,10 +75,14 @@ public class EnemyMovement : MonoBehaviour {
 			if (Vector3.Distance (gameObject.transform.position, target.transform.position) <= minDistanceToObject) {
 				agent.Stop ();
 				if (target.GetComponent<PylonHealth> ().isDestroyed) {
+					
 					Destroy (target.transform.root.gameObject);
 					agent.Stop ();
 				} else if (target != null && timer >= timeBetweenHits) {
 					target.GetComponentInParent<PylonHealth> ().TakeDamage (damagePerHit);
+					sound.clip = attack;
+					sound.volume = 1;
+					sound.Play ();
 					timer = 0f;
 				}
 			}
