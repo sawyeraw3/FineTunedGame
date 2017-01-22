@@ -15,7 +15,7 @@ public class WaveManager : MonoBehaviour {
 		text = GameObject.Find("WaveText").GetComponent <Text> ();
 		
 		// Reset the score.
-		wave = 0;
+		wave = 1;
 	}
 	
 	

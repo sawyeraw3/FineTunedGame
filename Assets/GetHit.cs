@@ -32,7 +32,6 @@ public class GetHit : MonoBehaviour {
 	}
 
 	IEnumerator PlayerHit(Vector3 dir) {
-		Debug.Log (dir);
 		AudioSource sound = gameObject.GetComponentInChildren<AudioSource> ();
 		controller.enabled = false;
 		emitter.enabled = false;

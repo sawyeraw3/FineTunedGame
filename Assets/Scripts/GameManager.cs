@@ -5,9 +5,10 @@ public class GameManager : MonoBehaviour {
 
 	public GameObject[] enemyTypes;
 	public Transform[] spawnPoints;
-	public int maxEnemies;
+	public int maxEnemies = 10;
 	public int secBetweenSpawn = 5;
-	public int waveEnemyIncrease;
+	public int waveEnemyIncrease = 4;
+	public float timeBetweenWaves = 8;
 	public float difficultySpread = 10;
 	public float upgradeSpeed = 3;
 	public AudioClip newWave;
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour {
 	int whichEnemy = 0;
 	float difficulty = 1;
 	float timer;
+	float waveTimer;
 
 	public readonly Color Blue = new Color((56f/255f),(63f/255f),(188f/255f), 1);
 	public readonly Color Cyan = new Color((1f/255f),1,1, 1);
@@ -37,6 +39,7 @@ public class GameManager : MonoBehaviour {
 		totalEnemies += maxEnemies;
 		EnemiesLeftManager.totalEnemies = totalEnemies;
 		timer = 0;
+		waveTimer = 0;
 	}
 	
 	// Update is called once per frame
@@ -47,15 +50,20 @@ public class GameManager : MonoBehaviour {
 				SpawnEnemies ();
 				timer = 0;
 			} else if (EnemiesLeftManager.totalEnemies == 0) {
-				enemiesSpawned = 0;
-				maxEnemies += waveEnemyIncrease;
-				totalEnemies += maxEnemies;
-				EnemiesLeftManager.totalEnemies = maxEnemies;
-				WaveManager.wave++;
-				AudioSource sound = GetComponentInChildren<AudioSource> ();
-				sound.clip = newWave;
-				sound.Play();
-				difficulty++;
+				waveTimer += Time.deltaTime;
+				if (waveTimer > timeBetweenWaves) {
+					Debug.Log ("newWave");
+					enemiesSpawned = 0;
+					maxEnemies += waveEnemyIncrease;
+					totalEnemies += maxEnemies;
+					EnemiesLeftManager.totalEnemies = maxEnemies;
+					WaveManager.wave++;
+					AudioSource sound = GetComponentInChildren<AudioSource> ();
+					sound.clip = newWave;
+					sound.Play ();
+					difficulty++;
+					waveTimer = 0f;
+				}
 			}
 		}
 	}

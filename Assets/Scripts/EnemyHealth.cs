@@ -26,6 +26,7 @@ public class EnemyHealth : MonoBehaviour {
 	void Update () {
 		slider.value = curHealth;
 		if (dead) {
+			EnemiesLeftManager.totalEnemies -= 1;
 			StartCoroutine ("SoundAndDie");
 		}
 	}
@@ -48,7 +49,6 @@ public class EnemyHealth : MonoBehaviour {
 			curHealth -= damage;
 		}
 		if (curHealth <= 0) {
-			EnemiesLeftManager.totalEnemies -= 1;
 			dead = true;
 		}
 	}
