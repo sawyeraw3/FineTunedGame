@@ -82,6 +82,7 @@ public class EmitRings : MonoBehaviour {
 
 	IEnumerator FadeNoise() {
 		float i = 0.0f;
+		float step = 1.1f / emitLifeSpan;
 		while (i <= 1.0f) {
 			i += step * Time.deltaTime;
 			noise.volume = Mathf.Lerp (1, 0, i);
