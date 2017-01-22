@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour {
 	public readonly Color Red = new Color(1,(49f/255f),(58f/255f), 1);
 	public readonly Color Pink = new Color(1,(36f/255f),(239f/255f), 1);
 
-	Color[] cols;
+	public Color[] cols;
 
 	// Use this for initialization
 	void Start () {
