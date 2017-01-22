@@ -39,11 +39,7 @@ public class DealDamage : MonoBehaviour {
 			if (otherCol.r == col.r && otherCol.g == col.g && otherCol.b == col.b) {
 				damage *= 1.5f;
 			} else {
-<<<<<<< HEAD
-				damage *= 0.3f;
-=======
-				damage *= .1f;
->>>>>>> origin/master
+				damage *= 0.1f;
 			}
 			other.gameObject.GetComponent<EnemyHealth> ().TakeDamage (damage);
 		}
