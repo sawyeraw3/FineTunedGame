@@ -5,7 +5,6 @@ using UnityEngine;
 public class WaveMovement : MonoBehaviour {
 
 	public float moveSpeed = 5.0f;
-
 	public float frequency = 20.0f;
 	public float magnitude = 0.5f;
 	GameObject player;
@@ -17,20 +16,15 @@ public class WaveMovement : MonoBehaviour {
 	void Start () {
 		player = GameObject.FindGameObjectWithTag ("Player");
 		pos = transform.position;
-
 		axis = transform.up;
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		pos += Time.deltaTime * transform.forward * moveSpeed;
 		transform.position = pos + axis * Mathf.Sin (Time.time * frequency) * magnitude;
+		
 	}
-
-	void OnTriggerEnter(Collider other) {
-
-		if (other.gameObject.layer == 0){
-			Destroy (gameObject);
-		}
-	}
+		
 }
