@@ -22,15 +22,18 @@ public class DealDamage : MonoBehaviour {
 		if (damageDealt > 0) {
 			damageDealt -= (delta * damageDealt);
 		}
-			
+
 		col = rend.material.color;
 		if ((col.a - delta) > 0f) {
 			col.a -= delta;
 			rend.material.color = col;
 		}
 	}
+
 	void OnTriggerEnter(Collider other) {
-		if (other.gameObject.layer == 0){
+		if (other.gameObject.CompareTag ("Enemy")) {
+			other.gameObject.GetComponent<EnemyHealth> ().TakeDamage (damageDealt);
+		} else if (other.gameObject.layer == 0) {
 			Destroy (transform.root.gameObject);
 		}
 	}

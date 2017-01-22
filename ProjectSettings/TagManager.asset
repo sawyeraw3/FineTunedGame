@@ -7,7 +7,7 @@ TagManager:
   - HUD
   - Pylon
   - MasterPylon
-  - Colored
+  - Enemy
   layers:
   - Default
   - TransparentFX

@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour {
 	int totalEnemies = 0;
 	int enemiesSpawned = 0;
 	int whichSpawn = 0;
+	int whichEnemy = 0;
+
 	float timer;
 
 	public readonly Color Blue = new Color((56f/255f),(63f/255f),(188f/255f), 1);
@@ -44,8 +46,7 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
-	void SpawnEnemies()
-	{
+	void SpawnEnemies() {
 		whichSpawn = Random.Range (0, spawnPoints.Length);
 		GameObject newEnemy = Instantiate (enemyTypes[0], spawnPoints [whichSpawn].transform.position, Quaternion.identity) as GameObject;
 		int i = Random.Range (0, 5);
