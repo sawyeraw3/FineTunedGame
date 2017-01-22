@@ -37,7 +37,6 @@ public class DealDamage : MonoBehaviour {
 			float damage = damageDealt;
 			Color otherCol = other.gameObject.transform.FindChild ("Colored").GetComponentInChildren<Renderer> ().material.color;
 			if (otherCol.r == col.r && otherCol.g == col.g && otherCol.b == col.b) {
-				Debug.Log ("Match");
 				damage *= 1.5f;
 			} else {
 				damage *= .3f;
