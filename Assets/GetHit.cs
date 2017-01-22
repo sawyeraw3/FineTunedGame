@@ -32,7 +32,6 @@ public class GetHit : MonoBehaviour {
 	}
 
 	IEnumerator PlayerHit(Vector3 dir) {
-		Debug.Log (dir);
 		AudioSource sound = gameObject.GetComponentInChildren<AudioSource> ();
 		controller.enabled = false;
 		emitter.enabled = false;
@@ -43,7 +42,19 @@ public class GetHit : MonoBehaviour {
 		r.AddForce (Vector3.Scale(dir, new Vector3(30, 1, 30)), ForceMode.Impulse);
 		sound.clip = stun;
 		sound.Play ();
-		yield return new WaitForSeconds (stun.length);
+		Renderer[] rends = gameObject.GetComponentsInChildren<Renderer> ();
+		float nTimes = Mathf.Round(stun.length)*4;
+		while (nTimes > 0) {
+			foreach(Renderer re in rends)
+				re.enabled = true;
+			yield return new WaitForSeconds (0.125f);
+			foreach(Renderer re in rends)
+				re.enabled = false;
+			yield return new WaitForSeconds (0.125f);
+			nTimes--;
+		}
+		foreach(Renderer re in rends)
+			re.enabled = true;
 		controller.enabled = true;
 		emitter.enabled = true;
 		collide.gameObject.layer = 8;
