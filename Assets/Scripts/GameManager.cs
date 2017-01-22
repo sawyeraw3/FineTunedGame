@@ -4,7 +4,7 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour {
 
-	public GameObject enemy;
+	public GameObject[] enemies;
 	public Transform[] spawnPoints;
 	public int maxEnemies;
 	public int secBetweenSpawn = 5;
@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour {
 	int totalEnemies = 0;
 	int enemiesSpawned = 0;
 	int whichSpawn = 0;
+	int whichEnemy = 0;
+
 	float timer;
 
 	// Use this for initialization
@@ -35,10 +37,10 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
-	void SpawnEnemies()
-	{
+	void SpawnEnemies() {
 		whichSpawn = Random.Range (0, spawnPoints.Length);
-		GameObject newEnemy = Instantiate (enemy, spawnPoints [whichSpawn].transform.position, Quaternion.identity) as GameObject;
+		whichEnemy = Random.Range (0, enemies.Length);
+		GameObject newEnemy = Instantiate (enemies[whichEnemy], spawnPoints [whichSpawn].transform.position, Quaternion.identity) as GameObject;
 		newEnemy.GetComponentInChildren<Renderer> ().material.color = Color.yellow;
 		enemiesSpawned ++;
 	}
