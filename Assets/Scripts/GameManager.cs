@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour {
 	public int waveEnemyIncrease;
 	public float difficultySpread = 10;
 	public float upgradeSpeed = 3;
+	public AudioClip newWave;
 	int totalEnemies = 0;
 	int enemiesSpawned = 0;
 	int whichSpawn = 0;
@@ -47,7 +48,9 @@ public class GameManager : MonoBehaviour {
 				maxEnemies += waveEnemyIncrease;
 				totalEnemies += maxEnemies;
 				WaveManager.wave++;
-
+				AudioSource sound = GetComponentInChildren<AudioSource> ();
+				sound.clip = newWave;
+				sound.Play();
 				difficulty++;
 			}
 		}
