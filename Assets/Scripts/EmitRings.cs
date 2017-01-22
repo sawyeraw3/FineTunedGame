@@ -26,7 +26,6 @@ public class EmitRings : MonoBehaviour {
 		freqText = GameObject.FindGameObjectWithTag ("HUD").GetComponentInChildren<Text> ();
 		freqText.text = "Hz: " + curFrequency.ToString();
 		ballSpawn = gameObject.transform.FindChild ("BallSpawn").gameObject;
-		Debug.Log (ballSpawn.name);
 		center = ballSpawn.transform.position;
 	}
 
@@ -43,8 +42,6 @@ public class EmitRings : MonoBehaviour {
 		timer += Time.deltaTime;
 
 		if (Input.GetButtonDown("Fire1") && timer >= emitDelay){
-			Debug.Log ("Click");
-
 			center = ballSpawn.transform.position;
 			for (int i = 0; i < numParts; i++)
 			{
