@@ -11,6 +11,9 @@ public class GameManager : MonoBehaviour {
 	public float difficultySpread = 10;
 	public float upgradeSpeed = 3;
 	public AudioClip newWave;
+
+	GameOverManager gmo;
+
 	int totalEnemies = 0;
 	int enemiesSpawned = 0;
 	int whichSpawn = 0;
@@ -28,25 +31,26 @@ public class GameManager : MonoBehaviour {
 	public Color[] cols;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
+		gmo = GetComponent<GameOverManager> ();
 		cols = new Color[]{Blue, Cyan, Green, Orange, Red, Pink};
 		totalEnemies += maxEnemies;
+		EnemiesLeftManager.totalEnemies = totalEnemies;
 		timer = 0;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		GameOverManager gmo = GetComponent<GameOverManager> ();
 		if (!gmo.gameOver) {
 			timer += Time.deltaTime;
-
-			if (enemiesSpawned < maxEnemies && timer > secBetweenSpawn) {
+			if (enemiesSpawned != maxEnemies && timer > secBetweenSpawn) {
 				SpawnEnemies ();
 				timer = 0;
-			} else if (KillManager.kills == totalEnemies) {
+			} else if (EnemiesLeftManager.totalEnemies == 0) {
 				enemiesSpawned = 0;
 				maxEnemies += waveEnemyIncrease;
 				totalEnemies += maxEnemies;
+				EnemiesLeftManager.totalEnemies = maxEnemies;
 				WaveManager.wave++;
 				AudioSource sound = GetComponentInChildren<AudioSource> ();
 				sound.clip = newWave;
@@ -57,6 +61,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void SpawnEnemies() {
+		enemiesSpawned ++;
 		int e = 0;
 		if (Random.Range (0f, difficultySpread) <= difficulty)
 			e = 1;
@@ -70,6 +75,5 @@ public class GameManager : MonoBehaviour {
 		foreach (Light l in lights) {
 			l.color = c;
 		}
-		enemiesSpawned ++;
 	}
 }

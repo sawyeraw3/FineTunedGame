@@ -22,6 +22,6 @@ public class WaveManager : MonoBehaviour {
 	void Update ()
 	{
 		// Set the displayed text to be the word "Score" followed by the score value.
-		text.text = "Wave" + wave;
+		text.text = "Wave: " + wave;
 	}
 }

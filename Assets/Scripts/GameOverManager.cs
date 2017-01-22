@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections;
@@ -6,13 +7,19 @@ using System.Collections;
 public class GameOverManager : MonoBehaviour {
 
 	public bool gameOver = false;
-	public Canvas gameOverCanvas;
+	public GameObject gameOverCanvas;
 	public AudioClip[] gameOverSounds;
 	GameObject player;
 	GameObject UICanvas;
 	GameObject masterP;
+
+
 	//Freq, then Kills, then Wave
 	Text[] text;
+
+	FirstPersonController fps;
+	EmitRings eRings;
+	GameObject newButton;
 	/*
 	GameObject cannon;
 	SimplePlayerHealth playerHealth;
@@ -23,7 +30,11 @@ public class GameOverManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		newButton = gameOverCanvas.transform.FindChild ("RestartButton").gameObject;
+
 		player = GameObject.FindGameObjectWithTag ("Player");
+		fps = player.GetComponent<FirstPersonController> ();
+		eRings = player.GetComponent<EmitRings> ();
 		UICanvas = GameObject.Find ("UICanvas");
 		text = UICanvas.GetComponentsInChildren<Text>();
 		gameOverCanvas.gameObject.SetActive (false);
@@ -32,8 +43,9 @@ public class GameOverManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (!GameObject.FindWithTag("MasterPylon") && !gameOver) {
-			player.GetComponent<FirstPersonController> ().enabled = false;//walkSpeed = 0;
-			player.GetComponent<EmitRings> ().enabled = false;
+			fps.enabled = !fps.enabled;
+			eRings.enabled = !eRings.enabled;
+			EventSystem.current.GetComponent<EventSystem>().SetSelectedGameObject(newButton);
 			UICanvas.gameObject.SetActive (false);
 			gameOverCanvas.gameObject.SetActive (true);
 			GameObject.Find ("KillText").GetComponent<Text> ().text = text [1].text;

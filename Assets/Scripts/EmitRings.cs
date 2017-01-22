@@ -20,17 +20,22 @@ public class EmitRings : MonoBehaviour {
 	GameObject ballSpawn;
 	float timer;
 	Vector3 center;
-	Text freqText;
+
+
+	//Freq text, then Enemies, then Wave
+	Text[] texts;
+	Slider freqIndicator;
 	GameManager gm;
 
 
 	void Start()
 	{
 		gm = GameObject.Find ("LevelManager").GetComponent<GameManager>();
-		timer = emitDelay;
-		freqText = GameObject.FindGameObjectWithTag ("HUD").GetComponentInChildren<Text> ();
+		timer = emitDelay; 
+		texts = GameObject.FindGameObjectWithTag ("HUD").GetComponentsInChildren<Text> ();
+		freqIndicator = GameObject.Find ("Indicator").GetComponent<Slider>();
 		playerBody = GameObject.Find ("Joints");
-		freqText.text = "Hz: " + curFrequency.ToString();
+		texts[0].text = "Hz: " + curFrequency.ToString();
 		ballSpawn = gameObject.transform.FindChild ("BallSpawn").gameObject;
 		center = ballSpawn.transform.position;
 		setColor (playerBody, curFrequency);
@@ -41,11 +46,13 @@ public class EmitRings : MonoBehaviour {
 	{
 		if (Input.GetButtonDown("Fire2") && curFrequency < 35) {
 			curFrequency += 5;
-			freqText.text = "Hz: " + curFrequency.ToString();
+			texts[0].text = "Hz: " + curFrequency.ToString();
+			freqIndicator.value = (curFrequency / 5) - 2;
 			setColor (playerBody, curFrequency);
 		} else if (Input.GetButtonDown("Fire3") && curFrequency > 10) {
 			curFrequency -= 5;
-			freqText.text = "Hz: " + curFrequency.ToString();
+			texts[0].text = "Hz: " + curFrequency.ToString();
+			freqIndicator.value = (curFrequency / 5) - 2;
 			setColor (playerBody, curFrequency);
 		}
 
@@ -78,7 +85,6 @@ public class EmitRings : MonoBehaviour {
 
 				ballLight.color = setColor (newBall, curFrequency);
 
-
 			}
 			GameObject noiseMaker = Instantiate (new GameObject (), center, Quaternion.identity);
 			AudioSource n = noiseMaker.AddComponent<AudioSource> ();
@@ -109,30 +115,36 @@ public class EmitRings : MonoBehaviour {
 		{
 		case 10:
 			rend.material.SetColor ("_Color", gm.Blue);
-			freqText.color = gm.Blue;
+			colorText (gm.Blue);
 			return gm.Blue;
 		case 15:
 			rend.material.SetColor ("_Color", gm.Cyan);
-			freqText.color = gm.Cyan;
+			colorText(gm.Cyan);
 			return gm.Cyan;
 		case 20:
 			rend.material.SetColor ("_Color", gm.Green);
-			freqText.color = gm.Green;
+			colorText(gm.Green);
 			return gm.Green;
 		case 25:
 			rend.material.SetColor ("_Color", gm.Orange);
-			freqText.color = gm.Orange;
+			colorText (gm.Orange);
 			return gm.Orange;
 		case 30:
 			rend.material.SetColor ("_Color", gm.Red);
-			freqText.color = gm.Red;
+			colorText(gm.Red);
 			return gm.Red;
 		case 35:
 			rend.material.SetColor ("_Color", gm.Pink);
-			freqText.color = gm.Pink;
+			colorText(gm.Pink);
 			return gm.Pink;
 		}
 		return Color.black;
+	}
+
+	void colorText(Color col) {
+		foreach (Text t in texts) {
+			t.color = col;
+		}
 	}
 
 	Vector3 RandomCircle(Vector3 center, float radius,int a)
