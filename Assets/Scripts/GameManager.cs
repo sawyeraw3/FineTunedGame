@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour {
 	void Start () {
 		cols = new Color[]{Blue, Cyan, Green, Orange, Red, Pink};
 		totalEnemies += maxEnemies;
+		EnemiesLeftManager.totalEnemies = totalEnemies;
 		timer = 0;
 	}
 	
@@ -47,6 +48,7 @@ public class GameManager : MonoBehaviour {
 				enemiesSpawned = 0;
 				maxEnemies += waveEnemyIncrease;
 				totalEnemies += maxEnemies;
+				EnemiesLeftManager.totalEnemies = totalEnemies;
 				WaveManager.wave++;
 				AudioSource sound = GetComponentInChildren<AudioSource> ();
 				sound.clip = newWave;

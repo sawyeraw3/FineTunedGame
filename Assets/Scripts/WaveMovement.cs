@@ -17,7 +17,6 @@ public class WaveMovement : MonoBehaviour {
 		player = GameObject.FindGameObjectWithTag ("Player");
 		pos = transform.position;
 		axis = transform.up;
-
 	}
 	
 	// Update is called once per frame

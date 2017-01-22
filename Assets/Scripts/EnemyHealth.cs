@@ -49,7 +49,7 @@ public class EnemyHealth : MonoBehaviour {
 		}
 		if (curHealth <= 0) {
 			dead = true;
-			KillManager.kills += 1;
+			EnemiesLeftManager.enemiesKilled += 1;
 		}
 	}
 }
