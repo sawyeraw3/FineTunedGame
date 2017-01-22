@@ -80,10 +80,8 @@ public class EmitRings : MonoBehaviour {
 
 
 			}
-			GameObject noiseMaker = new GameObject ();
-			noiseMaker.transform.position = center;
-
-			AudioSource n = noiseMaker.AddComponent<AudioSource> ();
+			AudioSource n = new AudioSource ();
+			n.transform.position = center;
 			n.clip = noise.clip;
 			n.pitch = 1 + (1.5f * ((curFrequency / 100) - 0.15f));
 			n.Play ();
