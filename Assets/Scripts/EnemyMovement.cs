@@ -10,36 +10,70 @@ public class EnemyMovement : MonoBehaviour {
 	public float minDistanceToObject;
 	float timer = 0;
 
-	GameObject[] pylons;
+
+	GameObject target;
 	NavMeshAgent agent;
 	int whichPylon;
 
+	EnemyVars vars;
+
 	// Use this for initialization
 	void Start () {
-		pylons = GameObject.FindGameObjectsWithTag ("Pylon");
+		vars = GameObject.Find("LevelManager").GetComponent<EnemyVars> ();
 		agent = GetComponent<NavMeshAgent> ();
-		whichPylon = Random.Range (0, pylons.Length);
-		agent.destination = pylons [whichPylon].transform.position;
+
+		if (vars.pylons.Count > 0) {
+			whichPylon = Random.Range (0, vars.pylons.Count);
+			target = vars.pylons [whichPylon];
+			agent.destination = target.transform.position;
+		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		timer += Time.deltaTime;
-		if (pylons.Length > 0 && !pylons[whichPylon]) {
-			whichPylon = Random.Range (0, pylons.Length);
-			agent.destination = pylons [whichPylon].transform.position;
-		} else if (pylons.Length == 0) {
-			pylons = GameObject.FindGameObjectsWithTag ("MasterPylon");
-			whichPylon = Random.Range (0, pylons.Length);
-			agent.destination = pylons [whichPylon].transform.position;
-		}
 
-		if (Vector3.Distance (gameObject.transform.position, pylons [whichPylon].transform.position) <= minDistanceToObject) {
-			agent.Stop ();
-			if (timer >= timeBetweenHits) {
-				pylons [whichPylon].GetComponent<PylonHealth> ().TakeDamage (damagePerHit);
-				timer = 0f;
+		if (!vars.allPylonsDestroyed) {
+			if (target != null) {
+				if (Vector3.Distance (gameObject.transform.position, target.transform.position) <= minDistanceToObject) {
+					agent.Stop ();
+					if (target != null && timer >= timeBetweenHits) {
+						target.GetComponentInParent<PylonHealth> ().TakeDamage (damagePerHit);
+						timer = 0f;
+					}
+				}
+				if (target.GetComponent<PylonHealth> ()) {
+					if (target.GetComponent<PylonHealth> ().isDestroyed) {
+						vars.pylons.Remove (target.gameObject);
+						Destroy (target.gameObject);
+						if (vars.pylons.Count != 0) {
+							whichPylon = Random.Range (0, vars.pylons.Count);
+							target = vars.pylons [whichPylon];
+							if (target != null) {
+								agent.destination = target.transform.position;
+								agent.Resume ();
+							}
+						}
+					}
+				}
 			}
+		} else if (GameObject.FindGameObjectWithTag ("MasterPylon")) {
+			target = GameObject.FindGameObjectWithTag ("MasterPylon");
+			agent.destination = target.transform.position;
+			agent.Resume ();
+
+			if (Vector3.Distance (gameObject.transform.position, target.transform.position) <= minDistanceToObject) {
+				agent.Stop ();
+				if (target.GetComponent<PylonHealth> ().isDestroyed) {
+					Destroy (target.transform.root.gameObject);
+					agent.Stop ();
+				} else if (target != null && timer >= timeBetweenHits) {
+					target.GetComponentInParent<PylonHealth> ().TakeDamage (damagePerHit);
+					timer = 0f;
+				}
+			}
+		} else {
+			agent.Stop();
 		}
 	}
 }
