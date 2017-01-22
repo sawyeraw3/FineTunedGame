@@ -9,12 +9,12 @@ public class GameManager : MonoBehaviour {
 	public int secBetweenSpawn = 5;
 	public int waveEnemyIncrease;
 	public float difficultySpread = 10;
+	public float upgradeSpeed = 3;
 	int totalEnemies = 0;
 	int enemiesSpawned = 0;
 	int whichSpawn = 0;
 	int whichEnemy = 0;
 	float difficulty = 1;
-
 	float timer;
 
 	public readonly Color Blue = new Color((56f/255f),(63f/255f),(188f/255f), 1);
@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour {
 			maxEnemies += waveEnemyIncrease;
 			totalEnemies += maxEnemies;
 			WaveManager.wave ++;
+
 			difficulty++;
 		}
 	}
@@ -55,7 +56,7 @@ public class GameManager : MonoBehaviour {
 			e = 1;
 		whichSpawn = Random.Range (0, spawnPoints.Length);
 		GameObject newEnemy = Instantiate (enemyTypes[e], spawnPoints [whichSpawn].transform.position, Quaternion.identity) as GameObject;
-		int i = Random.Range (0, 5);
+		int i = Random.Range (0, 6);
 		Color c = cols [i];
 		Renderer rend = newEnemy.transform.FindChild ("Colored").GetComponent<Renderer>();
 		rend.material.color = c;

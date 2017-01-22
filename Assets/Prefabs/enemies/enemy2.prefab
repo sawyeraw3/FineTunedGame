@@ -680,8 +680,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f653e9661c436d44891fb8251693b58b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damagePerHit: 5
-  timeBetweenHits: 3
+  damagePerHit: 10
+  timeBetweenHits: 5
   minDistanceToObject: 4
 --- !u!114 &114856901664903712
 MonoBehaviour:
@@ -694,7 +694,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 717f8f46ecfd5af449a1753ae6c492da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  curHealth: 20
+  curHealth: 100
 --- !u!195 &195811858755651220
 NavMeshAgent:
   m_ObjectHideFlags: 1
