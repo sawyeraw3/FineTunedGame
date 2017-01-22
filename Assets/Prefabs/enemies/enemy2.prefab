@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4589727257394788}
   - component: {fileID: 33128091055283698}
   - component: {fileID: 23444769557538664}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Colored
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4080044459232270}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: enemy2_base.stl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ GameObject:
   - component: {fileID: 4485957317419558}
   - component: {fileID: 33601225116886656}
   - component: {fileID: 23169240932933712}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: <STL_BINARY>
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ GameObject:
   - component: {fileID: 4360218476372566}
   - component: {fileID: 33506742773993150}
   - component: {fileID: 23691099885709988}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: <STL_BINARY>
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,7 +85,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4313809480957026}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: enemy2_highlights.stl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,9 +104,9 @@ GameObject:
   - component: {fileID: 65106666560890314}
   - component: {fileID: 114856901664903712}
   - component: {fileID: 114516960805666936}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: enemy2
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

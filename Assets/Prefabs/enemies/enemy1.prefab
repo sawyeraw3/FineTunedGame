@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4002404574281686}
   - component: {fileID: 33665548383308842}
   - component: {fileID: 23447551169929118}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: <STL_BINARY>
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4863490203466524}
   - component: {fileID: 33789142223621564}
   - component: {fileID: 23613236718177494}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: <STL_BINARY>
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 4144360071414844}
   - component: {fileID: 33953488759696844}
   - component: {fileID: 23957492043380140}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Colored
   m_TagString: Colored
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4872942145926526}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: enemy1_wheels.stl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,7 +85,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4135071958172234}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: enemy1_core.stl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4866980293253494}
   - component: {fileID: 108784245258785268}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 114627268991589120}
   - component: {fileID: 114580117291321734}
   - component: {fileID: 65437731051487868}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: enemy1
   m_TagString: Enemy
   m_Icon: {fileID: 0}

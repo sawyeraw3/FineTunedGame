@@ -1255,7 +1255,7 @@ MonoBehaviour:
   - {fileID: 356353107}
   - {fileID: 1364342506}
   maxEnemies: 10
-  secBetweenSpawn: 1
+  secBetweenSpawn: 3
   waveEnemyIncrease: 0
 --- !u!114 &1430807224
 MonoBehaviour:

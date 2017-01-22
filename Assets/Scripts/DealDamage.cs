@@ -6,6 +6,7 @@ public class DealDamage : MonoBehaviour {
 
 	public float damageDealt;
 	float delta;
+	//public Color startCol;
 	Color col;
 	Renderer rend;
 	public float deathDelay;
@@ -13,6 +14,7 @@ public class DealDamage : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rend = gameObject.GetComponentInChildren<Renderer> ();
+		//startCol = rend.material.color;
 	}
 	
 	// Update is called once per frame
@@ -32,8 +34,17 @@ public class DealDamage : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other) {
 		if (other.gameObject.CompareTag ("Enemy")) {
-			other.gameObject.GetComponent<EnemyHealth> ().TakeDamage (damageDealt);
-		} else if (other.gameObject.layer == 0) {
+			float damage = damageDealt;
+			Color otherCol = other.gameObject.transform.FindChild ("Colored").GetComponentInChildren<Renderer> ().material.color;
+			if (otherCol.r == col.r && otherCol.g == col.g && otherCol.b == col.b) {
+				Debug.Log ("Match");
+				damage *= 1.5f;
+			} else {
+				damage *= .3f;
+			}
+			other.gameObject.GetComponent<EnemyHealth> ().TakeDamage (damage);
+		}
+		if (other.gameObject.layer == 0) {
 			Destroy (transform.root.gameObject);
 		}
 	}
