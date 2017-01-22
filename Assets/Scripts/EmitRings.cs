@@ -104,6 +104,7 @@ public class EmitRings : MonoBehaviour {
 			n.volume = Mathf.Lerp (1, 0, i);
 			yield return new WaitForFixedUpdate ();
 		}
+		Destroy (n);
 	}
 
 	Color setColor(GameObject go, float freq) {
@@ -112,9 +113,9 @@ public class EmitRings : MonoBehaviour {
 		switch (c)
 		{
 		case 10:
-			rend.material.SetColor ("_Color", Green);
-			freqText.color = Green;
-			return Green;
+			rend.material.SetColor ("_Color", Blue);
+			freqText.color = Blue;
+			return Blue;
 			break;
 		case 15:
 			rend.material.SetColor ("_Color", Cyan);
@@ -122,24 +123,24 @@ public class EmitRings : MonoBehaviour {
 			return Cyan;
 			break;
 		case 20:
-			rend.material.SetColor ("_Color", Blue);
-			freqText.color = Blue;
-			return Blue;
+			rend.material.SetColor ("_Color", Green);
+			freqText.color = Green;
+			return Green;
 			break;
 		case 25:
-			rend.material.SetColor ("_Color", Pink);
-			freqText.color = Pink;
-			return Pink;
-			break;
-		case 30:
 			rend.material.SetColor ("_Color", Orange);
 			freqText.color = Orange;
 			return Orange;
 			break;
-		case 35:
+		case 30:
 			rend.material.SetColor ("_Color", Red);
 			freqText.color = Red;
 			return Red;
+			break;
+		case 35:
+			rend.material.SetColor ("_Color", Pink);
+			freqText.color = Pink;
+			return Pink;
 			break;
 		}
 		return Color.black;
