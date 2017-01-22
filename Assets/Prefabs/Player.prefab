@@ -69,6 +69,7 @@ GameObject:
   - component: {fileID: 54951106983599476}
   - component: {fileID: 114322940632722558}
   - component: {fileID: 114344068168630246}
+  - component: {fileID: 208721011313594122}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -183,6 +184,7 @@ GameObject:
   - component: {fileID: 33888868038819864}
   - component: {fileID: 23901941514934212}
   - component: {fileID: 64080299648497702}
+  - component: {fileID: 65483642112214958}
   m_Layer: 8
   m_Name: Structure
   m_TagString: Untagged
@@ -514,12 +516,24 @@ MeshCollider:
   m_GameObject: {fileID: 1742162760591858}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Convex: 1
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 10fc8edbc2edd5b4d98195305592c313, type: 3}
+--- !u!65 &65483642112214958
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1742162760591858}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 19.985334, y: 17.95291, z: 31.004908}
+  m_Center: {x: 0.24411762, y: 0.24880505, z: 9.572851}
 --- !u!81 &81739072198504442
 AudioListener:
   m_ObjectHideFlags: 1
@@ -576,3 +590,18 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1679929331725856}
   m_Enabled: 1
+--- !u!208 &208721011313594122
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1307866180923958}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.505, y: 0.785, z: 0.715}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.57, y: 0.54, z: 0}
+  m_TimeToStationary: 0.5
