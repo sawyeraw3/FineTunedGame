@@ -8,10 +8,12 @@ public class GameManager : MonoBehaviour {
 	public int maxEnemies;
 	public int secBetweenSpawn = 5;
 	public int waveEnemyIncrease;
+	public float difficultySpread = 10;
 	int totalEnemies = 0;
 	int enemiesSpawned = 0;
 	int whichSpawn = 0;
 	int whichEnemy = 0;
+	float difficulty = 1;
 
 	float timer;
 
@@ -43,18 +45,22 @@ public class GameManager : MonoBehaviour {
 			maxEnemies += waveEnemyIncrease;
 			totalEnemies += maxEnemies;
 			WaveManager.wave ++;
+			difficulty++;
 		}
 	}
 
 	void SpawnEnemies() {
+		int e = 0;
+		if (Random.Range (0f, difficultySpread) <= difficulty)
+			e = 1;
 		whichSpawn = Random.Range (0, spawnPoints.Length);
-		GameObject newEnemy = Instantiate (enemyTypes[0], spawnPoints [whichSpawn].transform.position, Quaternion.identity) as GameObject;
+		GameObject newEnemy = Instantiate (enemyTypes[e], spawnPoints [whichSpawn].transform.position, Quaternion.identity) as GameObject;
 		int i = Random.Range (0, 5);
 		Color c = cols [i];
 		Renderer rend = newEnemy.transform.FindChild ("Colored").GetComponent<Renderer>();
 		rend.material.color = c;
-		Light l = newEnemy.GetComponentInChildren<Light> ();
-		if (l) {
+		Light[] lights = newEnemy.GetComponentsInChildren<Light> ();
+		foreach (Light l in lights) {
 			l.color = c;
 		}
 		enemiesSpawned ++;
