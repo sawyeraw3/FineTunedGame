@@ -37,11 +37,8 @@ public class GameManager : MonoBehaviour {
 
 	void SpawnEnemies()
 	{
-		if (whichSpawn == spawnPoints.Length) {
-			whichSpawn = 0;
-		}
+		whichSpawn = Random.Range (0, spawnPoints.Length);
 		Transform.Instantiate (enemy, spawnPoints [whichSpawn].transform.position, spawnPoints [whichSpawn].transform.rotation);
-		whichSpawn ++;
 		enemiesSpawned ++;
 	}
 }
