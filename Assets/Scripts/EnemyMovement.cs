@@ -122,4 +122,17 @@ public class EnemyMovement : MonoBehaviour {
 			agent.Resume ();
 		}
 	}
+	void OnCollisionEnter(Collision other) {
+		if (other.gameObject.tag == "Player") {
+			if (target == other.gameObject) {
+				agent.Stop();
+				agent.angularSpeed = 90;
+				agent.speed = 3.5f;
+				target = prevTarget;
+				minDistanceToObject = minDistanceTemp;
+				agent.destination = target.transform.position;
+				agent.Resume ();
+			}
+		}
+	}
 }

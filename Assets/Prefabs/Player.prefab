@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4234070604247240}
-  m_Layer: 1
+  m_Layer: 8
   m_Name: main__structure.stl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35,7 +35,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4031912753961318}
   - component: {fileID: 82209406011094340}
-  m_Layer: 1
+  m_Layer: 8
   m_Name: BallSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ GameObject:
   - component: {fileID: 4717723998717644}
   - component: {fileID: 33115506692807376}
   - component: {fileID: 23629927866818874}
-  m_Layer: 1
+  m_Layer: 8
   m_Name: Highlights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 208721011313594122}
   - component: {fileID: 135214847855141890}
   - component: {fileID: 114413447642373446}
-  m_Layer: 1
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4050967902239394}
-  m_Layer: 1
+  m_Layer: 8
   m_Name: main_joints.stl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4189372829585014}
   - component: {fileID: 81812647580970812}
-  m_Layer: 1
+  m_Layer: 8
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,7 +119,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4554832246573130}
-  m_Layer: 1
+  m_Layer: 8
   m_Name: main__highlights.stl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 4797144328415072}
   - component: {fileID: 33189512156156204}
   - component: {fileID: 23154382438046294}
-  m_Layer: 1
+  m_Layer: 8
   m_Name: Joints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,7 +151,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4883432643194860}
-  m_Layer: 1
+  m_Layer: 8
   m_Name: spider dude
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 20206295151960658}
   - component: {fileID: 92369861355378680}
   - component: {fileID: 124883100977067928}
-  m_Layer: 1
+  m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -187,7 +187,7 @@ GameObject:
   - component: {fileID: 33888868038819864}
   - component: {fileID: 23901941514934212}
   - component: {fileID: 65483642112214958}
-  m_Layer: 1
+  m_Layer: 8
   m_Name: Structure
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -322,7 +322,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1307866180923958}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 32.9, y: -0.72, z: -4.74}
+  m_LocalPosition: {x: 27.68, y: 8.31, z: -4.74}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4322703365477582}
@@ -637,6 +637,7 @@ MonoBehaviour:
   emitLifeSpan: 1
   maxDamageDealt: 5
   waveSpeed: 12
+  noise: {fileID: 8300000, guid: 4f88c4cbdff4b0242b7356171a787853, type: 3}
 --- !u!114 &114344068168630246
 MonoBehaviour:
   m_ObjectHideFlags: 1
