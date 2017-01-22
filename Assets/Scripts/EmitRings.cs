@@ -14,6 +14,7 @@ public class EmitRings : MonoBehaviour {
 	public float emitLifeSpan;
 	public float maxDamageDealt;
 
+	AudioSource noise;
 	GameObject playerBody;
 	GameObject ballSpawn;
 	float timer;
@@ -31,6 +32,7 @@ public class EmitRings : MonoBehaviour {
 		ballSpawn = gameObject.transform.FindChild ("BallSpawn").gameObject;
 		center = ballSpawn.transform.position;
 		setColor (playerBody, curFrequency);
+		noise = GetComponentInChildren<AudioSource> ();
 	}
 
 	void Update()
@@ -69,8 +71,21 @@ public class EmitRings : MonoBehaviour {
 
 				setColor (newBall, curFrequency);
 
+				noise.pitch = 1 + (1.5f * ((curFrequency / 100)- 0.15f));
+				noise.Play ();
+				StartCoroutine ("FadeNoise");
+
 			}
 			timer = 0;
+		}
+	}
+
+	IEnumerator FadeNoise() {
+		float i = 0.0f;
+		while (i <= 1.0f) {
+			i += step * Time.deltaTime;
+			noise.volume = Mathf.Lerp (1, 0, i);
+			yield return new WaitForFixedUpdate ();
 		}
 	}
 
