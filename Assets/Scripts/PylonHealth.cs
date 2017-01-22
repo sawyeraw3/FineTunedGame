@@ -7,6 +7,7 @@ public class PylonHealth : MonoBehaviour {
 
 	public int curHealth;
 	public bool isDestroyed;
+	public Rigidbody rubble;
 	Slider slider;
 
 	// Use this for initialization
@@ -28,6 +29,12 @@ public class PylonHealth : MonoBehaviour {
 			curHealth -= damage;
 		} else {
 			isDestroyed = true;
+			BreakTower ();
 		}
+	}
+
+	public void BreakTower() {
+		gameObject.SetActive (false);
+		Instantiate (rubble, transform.position, transform.rotation);
 	}
 }

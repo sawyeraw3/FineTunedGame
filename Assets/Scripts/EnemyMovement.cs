@@ -81,7 +81,6 @@ public class EnemyMovement : MonoBehaviour {
 			if (Vector3.Distance (gameObject.transform.position, target.transform.position) <= minDistanceToObject) {
 				agent.Stop ();
 				if (target.GetComponent<PylonHealth> ().isDestroyed) {
-					
 					Destroy (target.transform.root.gameObject);
 					agent.Stop ();
 				} else if (target != null && timer >= timeBetweenHits) {

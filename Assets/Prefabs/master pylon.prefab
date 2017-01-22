@@ -954,8 +954,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43660abc8d81c2a4d911afd119a69c4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  curHealth: 25
+  curHealth: 100
   isDestroyed: 0
+  rubble: {fileID: 0}
 --- !u!208 &208832186271273724
 NavMeshObstacle:
   m_ObjectHideFlags: 1
