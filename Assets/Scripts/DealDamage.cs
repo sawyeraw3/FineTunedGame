@@ -61,7 +61,6 @@ public class DealDamage : MonoBehaviour {
 		for (int i = 0; i < gm.cols.Length; i++) {
 			ColDist [i] = (gm.cols [i].r * 255) + (gm.cols [i].g * 255) + (gm.cols [i].b * 255);
 		}
-		Debug.Log (val1 + " " + val2);
 		for (int i = 0; i < ColDist.Length; i++) {
 			if (val1 == ColDist [i])
 				valLoc1 = i;
