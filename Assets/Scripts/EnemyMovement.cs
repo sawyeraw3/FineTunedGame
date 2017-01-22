@@ -25,9 +25,15 @@ public class EnemyMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		timer += Time.deltaTime;
-		if (!pylons[whichPylon]) {
+		if (pylons.Length > 0 && !pylons[whichPylon]) {
 			whichPylon = Random.Range (0, pylons.Length);
+			agent.destination = pylons [whichPylon].transform.position;
+		} else if (pylons.Length == 0) {
+			pylons = GameObject.FindGameObjectsWithTag ("MasterPylon");
+			whichPylon = Random.Range (0, pylons.Length);
+			agent.destination = pylons [whichPylon].transform.position;
 		}
+
 		if (Vector3.Distance (gameObject.transform.position, pylons [whichPylon].transform.position) <= minDistanceToObject) {
 			agent.Stop ();
 			if (timer >= timeBetweenHits) {

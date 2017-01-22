@@ -14,7 +14,8 @@ public class PylonHealth : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (isDestroyed)
+			Destroy(gameObject);
 	}
 
 	public void TakeDamage (int damage) {
