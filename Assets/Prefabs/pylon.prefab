@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4739980586745350}
   - component: {fileID: 108406387206582350}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 4510820422689676}
   - component: {fileID: 33292961095042608}
   - component: {fileID: 23928651393851006}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: <STL_BINARY>
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4275853898106748}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: pylon__rings.stl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67,7 +67,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4800436542075130}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: pylon__baserings.stl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4055287968233680}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: pylon__base.stl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 4678259316248396}
   - component: {fileID: 33001397453539724}
   - component: {fileID: 23308919375256858}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: <STL_BINARY>
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 4360158438856924}
   - component: {fileID: 33094773062300372}
   - component: {fileID: 23080177044641174}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: <STL_BINARY>
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,7 +131,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4474029991652018}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: pylon__core.stl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 4874382529617230}
   - component: {fileID: 33523953538123882}
   - component: {fileID: 23838520307424152}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: <STL_BINARY>
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,9 +165,9 @@ GameObject:
   - component: {fileID: 4572136873998546}
   - component: {fileID: 33368693649904918}
   - component: {fileID: 64011926302508208}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: pylon
-  m_TagString: Untagged
+  m_TagString: Pylon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
