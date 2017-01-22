@@ -58,6 +58,7 @@ public class EnemyMovement : MonoBehaviour {
 				}
 			}
 		} else if (GameObject.FindGameObjectWithTag ("MasterPylon")) {
+			minDistanceToObject = 5f;
 			target = GameObject.FindGameObjectWithTag ("MasterPylon");
 			agent.destination = target.transform.position;
 			agent.Resume ();
