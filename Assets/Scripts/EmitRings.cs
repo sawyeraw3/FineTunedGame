@@ -30,6 +30,7 @@ public class EmitRings : MonoBehaviour {
 		freqText.text = "Hz: " + curFrequency.ToString();
 		ballSpawn = gameObject.transform.FindChild ("BallSpawn").gameObject;
 		center = ballSpawn.transform.position;
+		setColor (playerBody, curFrequency);
 	}
 
 	void Update()
