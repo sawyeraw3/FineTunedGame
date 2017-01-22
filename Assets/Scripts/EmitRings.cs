@@ -13,6 +13,7 @@ public class EmitRings : MonoBehaviour {
 	public float emitLifeSpan;
 	public float maxDamageDealt;
 
+	GameObject ballSpawn;
 	float timer;
 	Vector3 center;
 	Text freqText;
@@ -24,6 +25,9 @@ public class EmitRings : MonoBehaviour {
 		timer = emitDelay;
 		freqText = GameObject.FindGameObjectWithTag ("HUD").GetComponentInChildren<Text> ();
 		freqText.text = "Hz: " + curFrequency.ToString();
+		ballSpawn = gameObject.transform.FindChild ("BallSpawn").gameObject;
+		Debug.Log (ballSpawn.name);
+		center = ballSpawn.transform.position;
 	}
 
 	void Update()
@@ -39,8 +43,9 @@ public class EmitRings : MonoBehaviour {
 		timer += Time.deltaTime;
 
 		if (Input.GetButtonDown("Fire1") && timer >= emitDelay){
-			int offset = 0;
-			center = transform.position;
+			Debug.Log ("Click");
+
+			center = ballSpawn.transform.position;
 			for (int i = 0; i < numParts; i++)
 			{
 				int a = i * (360 / numParts);
@@ -94,8 +99,9 @@ public class EmitRings : MonoBehaviour {
 	{
 		float ang = a;
 		Vector3 pos;
-		pos.x = center.x + radius * Mathf.Sin(ang * Mathf.Deg2Rad);
-		pos.z = center.z + radius * Mathf.Cos(ang * Mathf.Deg2Rad);
+		//Switched x and z for spider
+		pos.z = center.z + radius * Mathf.Sin(ang * Mathf.Deg2Rad);
+		pos.x = center.x + radius * Mathf.Cos(ang * Mathf.Deg2Rad);
 		pos.y = center.y;
 		return pos;
 	}
