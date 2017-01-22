@@ -40,26 +40,6 @@ public class GameOverManager : MonoBehaviour {
 				GameObject.Find ("WaveText").GetComponent<Text> ().text = text [2].text;
 				appeared = true;
 			}
-			/*restartTimer += Time.deltaTime;
-			Debug.Log ("Restart in: " + (int)(restartDelay - restartTimer));
-			text[0].text = "Restart in: " + (int)(restartDelay - restartTimer);
-			if (restartTimer >= restartDelay) {
-				RestartLevel ();
-			}*/
 		}
 	}
-
-	public void loadLevel(int level) {
-		SceneManager.LoadScene(level);
-	}
-
-	/*
-	public void restartLevel() {
-		SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
-		Debug.Log ("restart");
-	}
-
-	public void loadMenuLevel() {
-		SceneManager.LoadScene("MenuLevel");
-	}*/
 }
