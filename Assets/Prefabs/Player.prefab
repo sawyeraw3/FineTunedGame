@@ -641,6 +641,7 @@ MonoBehaviour:
   numColorsInLevel: 0
   emitDelay: 1
   emitLifeSpan: 1
+  maxDamageDealt: 5
   waveSpeed: 12
 --- !u!114 &114344068168630246
 MonoBehaviour:
