@@ -51,18 +51,4 @@ public class GameOverManager : MonoBehaviour {
 			}*/
 		}
 	}
-
-	public void loadLevel(int level) {
-		SceneManager.LoadScene(level);
-	}
-
-	/*
-	public void restartLevel() {
-		SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
-		Debug.Log ("restart");
-	}
-
-	public void loadMenuLevel() {
-		SceneManager.LoadScene("MenuLevel");
-	}*/
 }
