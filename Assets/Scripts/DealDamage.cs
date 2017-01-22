@@ -16,7 +16,7 @@ public class DealDamage : MonoBehaviour {
 	void Start () {
 		rend = gameObject.GetComponentInChildren<Renderer> ();
 		//startCol = rend.material.color;
-		gm = transform.Find ("LevelManager").GetComponent<GameManager> ();
+		gm = GameObject.Find ("LevelManager").GetComponent<GameManager> ();
 	}
 	
 	// Update is called once per frame
@@ -52,19 +52,23 @@ public class DealDamage : MonoBehaviour {
 
 	float CalcDamage(Color c){
 		float val1 = (c.r * 255f) + (c.g * 255f) + (c.b * 255f);
-		float valLoc1;
+		float valLoc1 = 0;
 
 		float val2 = (col.r * 255f) + (col.g * 255f) + (col.b * 255f);
-		float valLoc2;
+		float valLoc2 = 0;
 
-		for (int i = 0; i < ColorDif.ColDist.Length; i++) {
-			if (val1 == ColorDif.ColDist [i])
+		float[] ColDist = new float[gm.cols.Length];
+		for (int i = 0; i < gm.cols.Length; i++) {
+			ColDist [i] = (gm.cols [i].r * 255) + (gm.cols [i].g * 255) + (gm.cols [i].b * 255);
+		}
+		Debug.Log (val1 + " " + val2);
+		for (int i = 0; i < ColDist.Length; i++) {
+			if (val1 == ColDist [i])
 				valLoc1 = i;
-			if (val2 == ColorDif.ColDist [i])
+			if (val2 == ColDist [i])
 				valLoc2 = i;
 		}
-		return ((ColorDif.ColDist.Length/10) 
-					/ Mathf.Abs (valLoc1 - valLoc2));
+		return (((float)(ColDist.Length / 10f)) / Mathf.Abs (valLoc1 - valLoc2));
 	}
 
 }
