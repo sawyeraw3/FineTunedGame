@@ -802,7 +802,7 @@ Prefab:
     - target: {fileID: 224684616853860696, guid: 6d1479116d6922a4e826997d03afb14e,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_AnchorMax.y
@@ -962,7 +962,7 @@ Prefab:
     - target: {fileID: 224695629831427996, guid: 6beaa58fc9fb56345b9bd1ff58f0ce7e,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6beaa58fc9fb56345b9bd1ff58f0ce7e, type: 2}
@@ -1053,7 +1053,7 @@ Prefab:
     - target: {fileID: 224684616853860696, guid: 6d1479116d6922a4e826997d03afb14e,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_AnchorMax.y
@@ -1210,6 +1210,7 @@ MonoBehaviour:
   maxEnemies: 10
   secBetweenSpawn: 3
   waveEnemyIncrease: 0
+  difficultySpread: 10
 --- !u!114 &1430807224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1281,7 +1282,7 @@ Prefab:
     - target: {fileID: 224684616853860696, guid: 6d1479116d6922a4e826997d03afb14e,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6d1479116d6922a4e826997d03afb14e, type: 2}
@@ -1428,7 +1429,7 @@ Prefab:
     - target: {fileID: 224684616853860696, guid: 6d1479116d6922a4e826997d03afb14e,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_AnchorMax.y

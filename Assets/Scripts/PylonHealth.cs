@@ -21,7 +21,6 @@ public class PylonHealth : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		slider.value = curHealth;
-		Debug.Log (slider.value);
 	}
 
 	public void TakeDamage (int damage) {

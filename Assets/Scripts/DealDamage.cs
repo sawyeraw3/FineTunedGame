@@ -39,11 +39,11 @@ public class DealDamage : MonoBehaviour {
 			if (otherCol.r == col.r && otherCol.g == col.g && otherCol.b == col.b) {
 				damage *= 1.5f;
 			} else {
-				damage *= .3f;
+				damage *= .1f;
 			}
 			other.gameObject.GetComponent<EnemyHealth> ().TakeDamage (damage);
 		}
-		if (other.gameObject.layer == 0) {
+		if (other.gameObject.layer == 0 || other.gameObject.layer == 2) {
 			Destroy (transform.root.gameObject);
 		}
 	}
