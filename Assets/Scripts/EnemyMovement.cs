@@ -9,12 +9,14 @@ public class EnemyMovement : MonoBehaviour {
 	public float timeBetweenHits;
 	public float minDistanceToObject;
 	float minDistanceToMaster;
+	float minDistanceTemp;
 	public AudioClip attack;
 	public AudioClip destroy;
 
 	float timer = 0;
 
 	GameObject target;
+	GameObject prevTarget;
 	NavMeshAgent agent;
 	int whichPylon;
 
@@ -40,9 +42,11 @@ public class EnemyMovement : MonoBehaviour {
 
 		if (!vars.allPylonsDestroyed) {
 			if (target != null) {
+				target = target.gameObject;
+				agent.destination = target.transform.position;
 				if (Vector3.Distance (gameObject.transform.position, target.transform.position) <= minDistanceToObject) {
 					agent.Stop ();
-					if (target != null && timer >= timeBetweenHits) {
+					if (target != null && target != GameObject.Find("Player") && timer >= timeBetweenHits) {
 						target.GetComponentInParent<PylonHealth> ().TakeDamage (damagePerHit);
 						sound.clip = attack;
 						sound.volume = 1;
@@ -90,6 +94,45 @@ public class EnemyMovement : MonoBehaviour {
 			}
 		} else {
 			agent.Stop();
+		}
+	}
+
+	void OnTriggerEnter(Collider other) {
+		if (other.gameObject.tag == "Player") {
+			//agent.Stop();
+			minDistanceTemp = minDistanceToObject;
+			minDistanceToObject = 0;
+			agent.stoppingDistance = 0;
+			agent.angularSpeed = 270;
+			agent.speed = 5f;
+			prevTarget = target;
+			target = other.gameObject;
+			agent.destination = target.transform.position;
+			//agent.Resume ();
+		}
+	}
+	void OnTriggerExit(Collider other) {
+		if (other.gameObject.tag == "Player") {
+			agent.Stop();
+			agent.angularSpeed = 90;
+			agent.speed = 3.5f;
+			target = prevTarget;
+			minDistanceToObject = minDistanceTemp;
+			agent.destination = target.transform.position;
+			agent.Resume ();
+		}
+	}
+	void OnCollisionEnter(Collision other) {
+		if (other.gameObject.tag == "Player") {
+			if (target == other.gameObject) {
+				agent.Stop();
+				agent.angularSpeed = 90;
+				agent.speed = 3.5f;
+				target = prevTarget;
+				minDistanceToObject = minDistanceTemp;
+				agent.destination = target.transform.position;
+				agent.Resume ();
+			}
 		}
 	}
 }

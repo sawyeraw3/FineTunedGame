@@ -71,6 +71,8 @@ GameObject:
   - component: {fileID: 114322940632722558}
   - component: {fileID: 114344068168630246}
   - component: {fileID: 208721011313594122}
+  - component: {fileID: 135214847855141890}
+  - component: {fileID: 114413447642373446}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -320,7 +322,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1307866180923958}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.4, y: 6.49, z: -4.74}
+  m_LocalPosition: {x: 27.68, y: 8.31, z: -4.74}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4322703365477582}
@@ -635,6 +637,7 @@ MonoBehaviour:
   emitLifeSpan: 1
   maxDamageDealt: 5
   waveSpeed: 12
+  noise: {fileID: 8300000, guid: 4f88c4cbdff4b0242b7356171a787853, type: 3}
 --- !u!114 &114344068168630246
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -650,6 +653,18 @@ MonoBehaviour:
   mouseSensitivityY: 1
   minDistanceToGround: 1
   walkSpeed: 15
+--- !u!114 &114413447642373446
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1307866180923958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecff49a6f0d07384cb9cf6ae31386955, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stun: {fileID: 8300000, guid: 42922acd60044694d9e636b8e48e4e2f, type: 3}
 --- !u!124 &124883100977067928
 Behaviour:
   m_ObjectHideFlags: 1
@@ -657,6 +672,18 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1679929331725856}
   m_Enabled: 1
+--- !u!135 &135214847855141890
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1307866180923958}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 7.5
+  m_Center: {x: -0.67, y: 0.72, z: 0}
 --- !u!208 &208721011313594122
 NavMeshObstacle:
   m_ObjectHideFlags: 1
