@@ -42,7 +42,7 @@ public class FirstPersonController : MonoBehaviour {
 		Vector3 moveDir = new Vector3(inputX,0, inputY);
 		if (moveDir.magnitude > 1)
 			moveDir = moveDir.normalized;
-		if(moveDir.magnitude != 0)
+		if (moveDir.magnitude != 0)
 			capsuleBody.transform.rotation = Quaternion.LookRotation (moveDir);
 
 		Vector3 targetMoveAmount = Vector3.zero;
