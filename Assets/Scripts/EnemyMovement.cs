@@ -5,17 +5,20 @@ using UnityEngine.AI;
 
 public class EnemyMovement : MonoBehaviour {
 
-	public Transform goal;
+	GameObject[] pylons;
 	NavMeshAgent agent;
+	int whichPylon;
 
 	// Use this for initialization
 	void Start () {
+		pylons = GameObject.FindGameObjectsWithTag ("Pylons");
 		agent = GetComponent<NavMeshAgent> ();
 		//agent.destination = goal.position;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		agent.destination = goal.position;
+		whichPylon = Random.Range (0, pylons.Length);
+		agent.destination = pylons[whichPylon].transform.position;
 	}
 }
