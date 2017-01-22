@@ -48,8 +48,8 @@ public class EnemyHealth : MonoBehaviour {
 			curHealth -= damage;
 		}
 		if (curHealth <= 0) {
+			EnemiesLeftManager.totalEnemies -= 1;
 			dead = true;
-			EnemiesLeftManager.enemiesKilled += 1;
 		}
 	}
 }

@@ -13,7 +13,7 @@ public class KillManager : MonoBehaviour {
 	void Awake ()
 	{
 		// Set up the reference.
-		text = GameObject.Find("KillText").GetComponent <Text> ();
+		//text = GameObject.Find("KillText").GetComponent <Text> ();
 		
 		// Reset the score.
 		kills = 0;
@@ -23,6 +23,6 @@ public class KillManager : MonoBehaviour {
 	void Update ()
 	{
 		// Set the displayed text to be the word "Score" followed by the score value.
-		text.text = "Kills: " + kills;
+		//text.text = "Kills: " + kills;
 	}
 }
