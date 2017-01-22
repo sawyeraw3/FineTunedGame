@@ -5,8 +5,9 @@ using System.Collections;
 
 public class GameOverManager : MonoBehaviour {
 
-	bool appeared = false;
+	public bool gameOver = false;
 	public Canvas gameOverCanvas;
+	public AudioClip[] gameOverSounds;
 	GameObject player;
 	GameObject UICanvas;
 	GameObject masterP;
@@ -30,16 +31,18 @@ public class GameOverManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (!GameObject.FindWithTag("MasterPylon") && !appeared) {
-			if (!appeared) {
-				player.GetComponent<FirstPersonController> ().enabled = false;//walkSpeed = 0;
-				player.GetComponent<EmitRings> ().enabled = false;
-				UICanvas.gameObject.SetActive (false);
-				gameOverCanvas.gameObject.SetActive (true);
-				GameObject.Find ("KillText").GetComponent<Text> ().text = text [1].text;
-				GameObject.Find ("WaveText").GetComponent<Text> ().text = text [2].text;
-				appeared = true;
-			}
+		if (!GameObject.FindWithTag("MasterPylon") && !gameOver) {
+			player.GetComponent<FirstPersonController> ().enabled = false;//walkSpeed = 0;
+			player.GetComponent<EmitRings> ().enabled = false;
+			UICanvas.gameObject.SetActive (false);
+			gameOverCanvas.gameObject.SetActive (true);
+			GameObject.Find ("KillText").GetComponent<Text> ().text = text [1].text;
+			GameObject.Find ("WaveText").GetComponent<Text> ().text = text [2].text;
+			AudioSource sound = gameObject.GetComponentInChildren<AudioSource> ();
+			sound.clip = gameOverSounds [Random.Range (0, gameOverSounds.Length)];
+			sound.volume = 1;
+			sound.Play ();
+			gameOver = true;
 			/*restartTimer += Time.deltaTime;
 			Debug.Log ("Restart in: " + (int)(restartDelay - restartTimer));
 			text[0].text = "Restart in: " + (int)(restartDelay - restartTimer);

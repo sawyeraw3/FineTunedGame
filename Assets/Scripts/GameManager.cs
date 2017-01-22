@@ -35,18 +35,21 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		timer += Time.deltaTime;
+		GameOverManager gmo = GetComponent<GameOverManager> ();
+		if (!gmo.gameOver) {
+			timer += Time.deltaTime;
 
-		if (enemiesSpawned < maxEnemies && timer > secBetweenSpawn) {
-			SpawnEnemies ();
-			timer = 0;
-		} else if (KillManager.kills == totalEnemies) {
-			enemiesSpawned = 0;
-			maxEnemies += waveEnemyIncrease;
-			totalEnemies += maxEnemies;
-			WaveManager.wave ++;
+			if (enemiesSpawned < maxEnemies && timer > secBetweenSpawn) {
+				SpawnEnemies ();
+				timer = 0;
+			} else if (KillManager.kills == totalEnemies) {
+				enemiesSpawned = 0;
+				maxEnemies += waveEnemyIncrease;
+				totalEnemies += maxEnemies;
+				WaveManager.wave++;
 
-			difficulty++;
+				difficulty++;
+			}
 		}
 	}
 
