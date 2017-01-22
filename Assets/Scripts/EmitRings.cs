@@ -111,32 +111,26 @@ public class EmitRings : MonoBehaviour {
 			rend.material.SetColor ("_Color", gm.Blue);
 			freqText.color = gm.Blue;
 			return gm.Blue;
-			break;
 		case 15:
 			rend.material.SetColor ("_Color", gm.Cyan);
 			freqText.color = gm.Cyan;
 			return gm.Cyan;
-			break;
 		case 20:
 			rend.material.SetColor ("_Color", gm.Green);
 			freqText.color = gm.Green;
 			return gm.Green;
-			break;
 		case 25:
 			rend.material.SetColor ("_Color", gm.Orange);
 			freqText.color = gm.Orange;
 			return gm.Orange;
-			break;
 		case 30:
 			rend.material.SetColor ("_Color", gm.Red);
 			freqText.color = gm.Red;
 			return gm.Red;
-			break;
 		case 35:
 			rend.material.SetColor ("_Color", gm.Pink);
 			freqText.color = gm.Pink;
 			return gm.Pink;
-			break;
 		}
 		return Color.black;
 	}

@@ -487,10 +487,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1515412475898538, guid: 8c2f48b437739fd4b80d0a252caf0050, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8c2f48b437739fd4b80d0a252caf0050, type: 2}
   m_IsPrefabParent: 0
@@ -1369,6 +1365,7 @@ MonoBehaviour:
   waveEnemyIncrease: 0
   difficultySpread: 20
   upgradeSpeed: 2
+  newWave: {fileID: 0}
 --- !u!114 &1430807224
 MonoBehaviour:
   m_ObjectHideFlags: 0

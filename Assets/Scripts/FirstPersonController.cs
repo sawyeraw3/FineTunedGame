@@ -11,11 +11,11 @@ public class FirstPersonController : MonoBehaviour {
 	GameObject body;
 	
 	// System vars
-	bool grounded;
-	bool flying = false;
+	//bool grounded;
+	//bool flying = false;
 	Vector3 moveAmount;
 	
-	Vector3 targetFlyAmount;
+	//Vector3 targetFlyAmount;
 	Rigidbody rigidbody;
 	Vector3 smoothMoveVelocity;
 	

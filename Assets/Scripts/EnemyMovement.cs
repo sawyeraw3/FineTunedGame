@@ -35,7 +35,6 @@ public class EnemyMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		GameManager gm = GameObject.Find ("LevelManager").GetComponent<GameManager> ();
 		AudioSource sound = GetComponentInChildren<AudioSource> ();
 		timer += Time.deltaTime;
 
