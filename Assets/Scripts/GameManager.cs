@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
-
 using System.Collections;
 
 public class GameManager : MonoBehaviour {
 
-	public GameObject[] enemies;
+	public GameObject[] enemyTypes;
 	public Transform[] spawnPoints;
 	public int maxEnemies;
 	public int secBetweenSpawn = 5;
@@ -16,8 +15,18 @@ public class GameManager : MonoBehaviour {
 
 	float timer;
 
+	public readonly Color Blue = new Color((56f/255f),(63f/255f),(188f/255f), 1);
+	public readonly Color Cyan = new Color((1f/255f),1,1, 1);
+	public readonly Color Green = new Color((103f/255f),1,(100f/255f), 1);
+	public readonly Color Orange = new Color(1,(97f/255f),(53f/255f), 1);
+	public readonly Color Red = new Color(1,(49f/255f),(58f/255f), 1);
+	public readonly Color Pink = new Color(1,(36f/255f),(239f/255f), 1);
+
+	Color[] cols;
+
 	// Use this for initialization
 	void Start () {
+		cols = new Color[]{Blue, Cyan, Green, Orange, Red, Pink};
 		totalEnemies += maxEnemies;
 		timer = 0;
 	}
@@ -39,9 +48,15 @@ public class GameManager : MonoBehaviour {
 
 	void SpawnEnemies() {
 		whichSpawn = Random.Range (0, spawnPoints.Length);
-		whichEnemy = Random.Range (0, enemies.Length);
-		GameObject newEnemy = Instantiate (enemies[whichEnemy], spawnPoints [whichSpawn].transform.position, Quaternion.identity) as GameObject;
-		newEnemy.GetComponentInChildren<Renderer> ().material.color = Color.yellow;
+		GameObject newEnemy = Instantiate (enemyTypes[0], spawnPoints [whichSpawn].transform.position, Quaternion.identity) as GameObject;
+		int i = Random.Range (0, 5);
+		Color c = cols [i];
+		Renderer rend = newEnemy.transform.FindChild ("Colored").GetComponent<Renderer>();
+		rend.material.color = c;
+		Light l = newEnemy.GetComponentInChildren<Light> ();
+		if (l) {
+			l.color = c;
+		}
 		enemiesSpawned ++;
 	}
 }

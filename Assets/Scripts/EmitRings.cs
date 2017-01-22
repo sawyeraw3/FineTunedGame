@@ -14,25 +14,18 @@ public class EmitRings : MonoBehaviour {
 	public float emitLifeSpan;
 	public float maxDamageDealt;
 
-	static Color Blue = new Color((56f/255f),(63f/255f),(188f/255f), 1);
-	static Color Cyan = new Color((1f/255f),1,1, 1);
-	static Color Pink = new Color(1,(36f/255f),(239f/255f), 1);
-	static Color Orange = new Color(1,(97f/255f),(53f/255f), 1);
-	static Color Red = new Color(1,(49f/255f),(58f/255f), 1);
-	static Color Green = new Color((103f/255f),1,(100f/255f), 1);
-
 	AudioSource noise;
 	GameObject playerBody;
 	GameObject ballSpawn;
 	float timer;
 	Vector3 center;
 	Text freqText;
+	GameManager gm;
 
 
-	// Use this for initialization
 	void Start()
 	{
-		
+		gm = GameObject.Find ("LevelManager").GetComponent<GameManager>();
 		timer = emitDelay;
 		freqText = GameObject.FindGameObjectWithTag ("HUD").GetComponentInChildren<Text> ();
 		playerBody = GameObject.Find ("Joints");
@@ -113,34 +106,34 @@ public class EmitRings : MonoBehaviour {
 		switch (c)
 		{
 		case 10:
-			rend.material.SetColor ("_Color", Blue);
-			freqText.color = Blue;
-			return Blue;
+			rend.material.SetColor ("_Color", gm.Blue);
+			freqText.color = gm.Blue;
+			return gm.Blue;
 			break;
 		case 15:
-			rend.material.SetColor ("_Color", Cyan);
-			freqText.color = Cyan;
-			return Cyan;
+			rend.material.SetColor ("_Color", gm.Cyan);
+			freqText.color = gm.Cyan;
+			return gm.Cyan;
 			break;
 		case 20:
-			rend.material.SetColor ("_Color", Green);
-			freqText.color = Green;
-			return Green;
+			rend.material.SetColor ("_Color", gm.Green);
+			freqText.color = gm.Green;
+			return gm.Green;
 			break;
 		case 25:
-			rend.material.SetColor ("_Color", Orange);
-			freqText.color = Orange;
-			return Orange;
+			rend.material.SetColor ("_Color", gm.Orange);
+			freqText.color = gm.Orange;
+			return gm.Orange;
 			break;
 		case 30:
-			rend.material.SetColor ("_Color", Red);
-			freqText.color = Red;
-			return Red;
+			rend.material.SetColor ("_Color", gm.Red);
+			freqText.color = gm.Red;
+			return gm.Red;
 			break;
 		case 35:
-			rend.material.SetColor ("_Color", Pink);
-			freqText.color = Pink;
-			return Pink;
+			rend.material.SetColor ("_Color", gm.Pink);
+			freqText.color = gm.Pink;
+			return gm.Pink;
 			break;
 		}
 		return Color.black;
