@@ -14,6 +14,13 @@ public class EmitRings : MonoBehaviour {
 	public float emitLifeSpan;
 	public float maxDamageDealt;
 
+	static Color Blue = new Color((56f/255f),(63f/255f),(188f/255f), 1);
+	static Color Cyan = new Color((1f/255f),1,1, 1);
+	static Color Pink = new Color(1,(36f/255f),(239f/255f), 1);
+	static Color Orange = new Color(1,(97f/255f),(53f/255f), 1);
+	static Color Red = new Color(1,(49f/255f),(58f/255f), 1);
+	static Color Green = new Color((103f/255f),1,(100f/255f), 1);
+
 	AudioSource noise;
 	GameObject playerBody;
 	GameObject ballSpawn;
@@ -25,6 +32,7 @@ public class EmitRings : MonoBehaviour {
 	// Use this for initialization
 	void Start()
 	{
+		
 		timer = emitDelay;
 		freqText = GameObject.FindGameObjectWithTag ("HUD").GetComponentInChildren<Text> ();
 		playerBody = GameObject.Find ("Joints");
@@ -51,6 +59,7 @@ public class EmitRings : MonoBehaviour {
 
 		if (Input.GetButtonDown("Fire1") && timer >= emitDelay){
 			center = ballSpawn.transform.position;
+
 			for (int i = 0; i < numParts; i++)
 			{
 				int a = i * (360 / numParts);
@@ -69,57 +78,71 @@ public class EmitRings : MonoBehaviour {
 				wm.frequency = curFrequency;
 				Destroy (newBall, emitLifeSpan);
 
-				setColor (newBall, curFrequency);
+				Light ballLight = newBall.GetComponent<Light> ();
 
-				noise.pitch = 1 + (1.5f * ((curFrequency / 100)- 0.15f));
-				noise.Play ();
-				StartCoroutine ("FadeNoise");
+				ballLight.color = setColor (newBall, curFrequency);
+
 
 			}
+			GameObject noiseMaker = new GameObject ();
+			noiseMaker.transform.position = center;
+
+			AudioSource n = noiseMaker.AddComponent<AudioSource> ();
+			n.clip = noise.clip;
+			n.pitch = 1 + (1.5f * ((curFrequency / 100) - 0.15f));
+			n.Play ();
+			StartCoroutine (FadeNoise (n));
 			timer = 0;
 		}
 	}
 
-	IEnumerator FadeNoise() {
+	IEnumerator FadeNoise(AudioSource n) {
 		float i = 0.0f;
 		float step = 1.1f / emitLifeSpan;
 		while (i <= 1.0f) {
 			i += step * Time.deltaTime;
-			noise.volume = Mathf.Lerp (1, 0, i);
+			n.volume = Mathf.Lerp (1, 0, i);
 			yield return new WaitForFixedUpdate ();
 		}
 	}
 
-	void setColor(GameObject go, float freq) {
+	Color setColor(GameObject go, float freq) {
 		Renderer rend = go.GetComponentInChildren<Renderer> ();
 		int c = (int) freq;
 		switch (c)
 		{
 		case 10:
-			rend.material.SetColor ("_Color", Color.black);
-			freqText.color = Color.black;
+			rend.material.SetColor ("_Color", Green);
+			freqText.color = Green;
+			return Green;
 			break;
 		case 15:
-			rend.material.SetColor ("_Color", Color.grey);
-			freqText.color = Color.grey;
+			rend.material.SetColor ("_Color", Cyan);
+			freqText.color = Cyan;
+			return Cyan;
 			break;
 		case 20:
-			rend.material.SetColor ("_Color", Color.blue);
-			freqText.color = Color.blue;
+			rend.material.SetColor ("_Color", Blue);
+			freqText.color = Blue;
+			return Blue;
 			break;
 		case 25:
-			rend.material.SetColor ("_Color", Color.green);
-			freqText.color = Color.green;
+			rend.material.SetColor ("_Color", Pink);
+			freqText.color = Pink;
+			return Pink;
 			break;
 		case 30:
-			rend.material.SetColor ("_Color", Color.yellow);
-			freqText.color = Color.yellow;
+			rend.material.SetColor ("_Color", Orange);
+			freqText.color = Orange;
+			return Orange;
 			break;
 		case 35:
-			rend.material.SetColor ("_Color", Color.red);
-			freqText.color = Color.red;
+			rend.material.SetColor ("_Color", Red);
+			freqText.color = Red;
+			return Red;
 			break;
 		}
+		return Color.black;
 	}
 
 	Vector3 RandomCircle(Vector3 center, float radius,int a)
