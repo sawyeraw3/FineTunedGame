@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
@@ -83,5 +84,7 @@ public class GameManager : MonoBehaviour {
 		foreach (Light l in lights) {
 			l.color = c;
 		}
+		Slider s = newEnemy.GetComponentInChildren<Slider> ();
+		s.transform.FindChild ("Fill Area").GetComponentInChildren<UnityEngine.UI.Image> ().color = c;
 	}
 }
