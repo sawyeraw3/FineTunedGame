@@ -7,18 +7,11 @@ public class PauseManager : MonoBehaviour {
 
 
 	bool isPaused = false;
-	GameObject player;
 	public Canvas pauseCanvas;
-
-	FirstPersonController fps;
-	EmitRings eRings;
 
 	// Use this for initialization
 	void Start () {
 		Time.timeScale = 1;
-		player = GameObject.FindGameObjectWithTag ("Player");
-		fps = player.GetComponent<FirstPersonController> ();
-		eRings = player.GetComponent<EmitRings> ();
 	}
 	
 	// Update is called once per frame
@@ -26,19 +19,12 @@ public class PauseManager : MonoBehaviour {
 		if (Input.GetButtonDown ("Start")) {
 			isPaused = !isPaused;
 			if (isPaused) {
-				freezeControls (!isPaused);
 				Time.timeScale = 0;
 				pauseCanvas.gameObject.SetActive (isPaused);
 			} else {
-				freezeControls (!isPaused);
 				pauseCanvas.gameObject.SetActive (isPaused);
 				Time.timeScale = 1;
 			}
 		}
-	}
-
-	void freezeControls(bool b) {
-		fps.enabled = b;
-		eRings.enabled = b;
 	}
 }
