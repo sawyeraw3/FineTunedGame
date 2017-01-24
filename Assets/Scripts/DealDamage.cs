@@ -16,7 +16,7 @@ public class DealDamage : MonoBehaviour {
 	void Start () {
 		rend = gameObject.GetComponentInChildren<Renderer> ();
 		//startCol = rend.material.color;
-		gm = GameObject.Find ("LevelManager").GetComponent<GameManager> ();
+		gm = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<GameManager> ();
 	}
 	
 	// Update is called once per frame

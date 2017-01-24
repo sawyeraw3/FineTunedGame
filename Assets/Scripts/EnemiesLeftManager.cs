@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class EnemiesLeftManager : MonoBehaviour {
 
+	public string playerID;
 	public static int enemiesLeft;        // The player's score.
 	public static int totalEnemies;
 
@@ -13,7 +14,7 @@ public class EnemiesLeftManager : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
 		// Set up the reference.
-		text = GameObject.Find("EnemiesText").GetComponent <Text> ();
+		text = GameObject.Find(playerID + "EnemiesText").GetComponent <Text> ();
 	}
 	
 	// Update is called once per frame

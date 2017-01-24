@@ -8,6 +8,10 @@ TagManager:
   - Pylon
   - MasterPylon
   - Enemy
+  - Colored
+  - P1_HUD
+  - P2_HUD
+  - LevelManager
   layers:
   - Default
   - TransparentFX

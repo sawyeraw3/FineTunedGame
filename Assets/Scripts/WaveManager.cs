@@ -5,14 +5,14 @@ using System.Collections;
 public class WaveManager : MonoBehaviour {
 
 	public static int wave;        // The player's score.
-	
+	public string playerID;
 	
 	Text text;                      // Reference to the Text component.
 
 	void Awake ()
 	{
 		// Set up the reference.
-		text = GameObject.Find("WaveText").GetComponent <Text> ();
+		text = GameObject.Find(playerID + "WaveText").GetComponent <Text> ();
 		
 		// Reset the score.
 		wave = 1;

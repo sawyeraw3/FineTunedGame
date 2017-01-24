@@ -25,7 +25,7 @@ public class EnemyMovement : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		minDistanceToMaster = minDistanceToObject * 1.5f;
-		vars = GameObject.Find("LevelManager").GetComponent<EnemyVars> ();
+		vars = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<EnemyVars> ();
 		agent = GetComponent<NavMeshAgent> ();
 
 		if (vars.pylons.Count > 0) {

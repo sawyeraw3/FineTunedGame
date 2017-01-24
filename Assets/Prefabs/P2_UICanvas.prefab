@@ -54,7 +54,7 @@ GameObject:
   - component: {fileID: 222621079093217242}
   - component: {fileID: 114921710382479302}
   m_Layer: 5
-  m_Name: FrequencyText
+  m_Name: P2_FrequencyText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 222546579120046644}
   - component: {fileID: 114922544017099086}
   m_Layer: 5
-  m_Name: EnemiesText
+  m_Name: P2_EnemiesText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 222426681404257100}
   - component: {fileID: 114193034216903796}
   m_Layer: 5
-  m_Name: WaveText
+  m_Name: P2_WaveText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 114762500055344830}
   m_Layer: 5
   m_Name: P2_UICanvas
-  m_TagString: HUD
+  m_TagString: P2_HUD
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

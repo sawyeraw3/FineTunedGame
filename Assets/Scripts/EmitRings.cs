@@ -27,17 +27,19 @@ public class EmitRings : MonoBehaviour {
 	Text[] texts;
 	Slider freqIndicator;
 	GameManager gm;
+	GameObject HUD;
 
 
 	void Start()
 	{
-		gm = GameObject.Find ("LevelManager").GetComponent<GameManager>();
-		timer = emitDelay; 
-		texts = GameObject.FindGameObjectWithTag ("HUD").GetComponentsInChildren<Text> ();
-		freqIndicator = GameObject.Find ("Indicator").GetComponent<Slider>();
-		playerBody = GameObject.Find ("Joints");
+		HUD = GameObject.FindGameObjectWithTag (playerID + "HUD");
+		gm = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<GameManager>();
+		timer = emitDelay;
+		texts = HUD.GetComponentsInChildren<Text> ();
 		texts[0].text = "Hz: " + curFrequency.ToString();
-		ballSpawn = gameObject.transform.FindChild ("BallSpawn").gameObject;
+		freqIndicator = HUD.transform.FindChild("Outline/Indicator").GetComponent<Slider>();
+		playerBody = gameObject.transform.Find("Body/spider dude/main_joints.stl/Joints").gameObject;
+		ballSpawn = gameObject.transform.Find("BallSpawn").gameObject;
 		center = ballSpawn.transform.position;
 		setColor (playerBody, curFrequency);
 
