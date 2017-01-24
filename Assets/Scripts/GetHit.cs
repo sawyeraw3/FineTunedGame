@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GetHit : MonoBehaviour {
 
-	FirstPersonController controller;
+	PlayerController controller;
 	EmitRings emitter;
 	public AudioClip stun;
 	BoxCollider collide;
@@ -12,7 +12,7 @@ public class GetHit : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		controller = gameObject.GetComponent<FirstPersonController> ();
+		controller = gameObject.GetComponent<PlayerController> ();
 		emitter = gameObject.GetComponent<EmitRings> ();
 		collide = gameObject.GetComponentInChildren<BoxCollider> ();
 		collide1 = gameObject.GetComponentInChildren<SphereCollider> ();

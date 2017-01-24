@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class FirstPersonController : MonoBehaviour {
+public class PlayerController : MonoBehaviour {
 	
 	// public vars
 	public float mouseSensitivityX = 1;

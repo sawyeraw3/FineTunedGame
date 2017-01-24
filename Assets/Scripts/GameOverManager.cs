@@ -17,7 +17,7 @@ public class GameOverManager : MonoBehaviour {
 	//Freq, then Kills, then Wave
 	Text[] text;
 
-	FirstPersonController fps;
+	PlayerController fps;
 	EmitRings eRings;
 	GameObject newButton;
 	/*
@@ -33,7 +33,7 @@ public class GameOverManager : MonoBehaviour {
 		newButton = gameOverCanvas.transform.FindChild ("RestartButton").gameObject;
 
 		player = GameObject.FindGameObjectWithTag ("Player");
-		fps = player.GetComponent<FirstPersonController> ();
+		fps = player.GetComponent<PlayerController> ();
 		eRings = player.GetComponent<EmitRings> ();
 		UICanvas = GameObject.Find ("UICanvas");
 		text = UICanvas.GetComponentsInChildren<Text>();
