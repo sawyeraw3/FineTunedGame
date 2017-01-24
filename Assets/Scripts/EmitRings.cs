@@ -45,6 +45,7 @@ public class EmitRings : MonoBehaviour {
 
 	void Update()
 	{
+
 		if (Input.GetButtonDown(playerID + "Fire2") && curFrequency < 35) {
 			curFrequency += 5;
 			texts[0].text = "Hz: " + curFrequency.ToString();
