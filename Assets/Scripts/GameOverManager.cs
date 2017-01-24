@@ -17,6 +17,7 @@ public class GameOverManager : MonoBehaviour {
 	//Freq, then Kills, then Wave
 	Text[] text;
 
+	public string playerID;
 	PlayerController fps;
 	EmitRings eRings;
 	GameObject newButton;
@@ -35,7 +36,7 @@ public class GameOverManager : MonoBehaviour {
 		player = GameObject.FindGameObjectWithTag ("Player");
 		fps = player.GetComponent<PlayerController> ();
 		eRings = player.GetComponent<EmitRings> ();
-		UICanvas = GameObject.Find ("UICanvas");
+		UICanvas = GameObject.Find (playerID + "UICanvas");
 		text = UICanvas.GetComponentsInChildren<Text>();
 		gameOverCanvas.gameObject.SetActive (false);
 	}
