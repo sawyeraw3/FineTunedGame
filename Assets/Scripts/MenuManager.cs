@@ -18,4 +18,8 @@ public class MenuManager : MonoBehaviour {
 	public void loadLevel(int level) {
 		SceneManager.LoadScene(level);
 	}
+
+	public void quitApp() {
+		Application.Quit ();
+	}
 }
