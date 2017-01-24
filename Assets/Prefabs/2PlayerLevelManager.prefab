@@ -182,8 +182,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   maxEnemies: 10
-  secBetweenSpawn: 3
-  waveEnemyIncrease: 0
+  secBetweenSpawn: 2
+  waveEnemyIncrease: 7
   timeBetweenWaves: 8
   difficultySpread: 20
   upgradeSpeed: 2

@@ -39,13 +39,9 @@ GameObject:
   - component: {fileID: 114601202143799706}
   - component: {fileID: 114604553902493016}
   - component: {fileID: 114944796298978992}
-  - component: {fileID: 114297312217237694}
   - component: {fileID: 114383426440963644}
-  - component: {fileID: 114685955489443520}
   - component: {fileID: 114456886428745356}
-  - component: {fileID: 114155845762471738}
   - component: {fileID: 114277969180193926}
-  - component: {fileID: 114128135819460206}
   m_Layer: 0
   m_Name: 1PlayerLevelManager
   m_TagString: LevelManager
@@ -160,30 +156,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &114128135819460206
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1476315883505204}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d6dc938422f615458aca980e4edd3c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerID: P2_
---- !u!114 &114155845762471738
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1476315883505204}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0472195a55a670245b2114dbce932dfe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerID: P2_
 --- !u!114 &114277969180193926
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -195,19 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d6dc938422f615458aca980e4edd3c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerID: P1_
---- !u!114 &114297312217237694
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1476315883505204}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c1a844eb14afcf4eb765c91060f3bca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerID: P2_
+  playerID: P1_SinglePlayer
 --- !u!114 &114383426440963644
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -224,7 +184,7 @@ MonoBehaviour:
   gameOverSounds:
   - {fileID: 8300000, guid: e5a17b559b445c64fa980f2020f11909, type: 3}
   - {fileID: 8300000, guid: 2a5b853a0110600458eb36f9a638de0b, type: 3}
-  playerID: P1_
+  playerID: P1_SinglePlayer
 --- !u!114 &114456886428745356
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -236,7 +196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0472195a55a670245b2114dbce932dfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerID: P1_
+  playerID: P1_SinglePlayer
 --- !u!114 &114601202143799706
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -285,30 +245,13 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   maxEnemies: 10
-  secBetweenSpawn: 3
-  waveEnemyIncrease: 0
+  secBetweenSpawn: 1
+  waveEnemyIncrease: 3
   timeBetweenWaves: 8
   difficultySpread: 20
   upgradeSpeed: 2
   newWave: {fileID: 8300000, guid: 65d27ff39eae28a43a58c4eb91baeadf, type: 3}
   cols: []
---- !u!114 &114685955489443520
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1476315883505204}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f58252452017be42bc1e445d8d7d5e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameOver: 0
-  gameOverCanvas: {fileID: 0}
-  gameOverSounds:
-  - {fileID: 8300000, guid: e5a17b559b445c64fa980f2020f11909, type: 3}
-  - {fileID: 8300000, guid: 2a5b853a0110600458eb36f9a638de0b, type: 3}
-  playerID: P2_
 --- !u!114 &114944796298978992
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -320,4 +263,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c1a844eb14afcf4eb765c91060f3bca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerID: P1_
+  playerID: P1_SinglePlayer
