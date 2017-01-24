@@ -104,10 +104,10 @@ GameObject:
   - component: {fileID: 4773186914727398}
   - component: {fileID: 54268166618103954}
   - component: {fileID: 114973572427077426}
-  - component: {fileID: 114650948430568646}
   - component: {fileID: 208600270543471536}
   - component: {fileID: 135565529966353146}
   - component: {fileID: 114289968987713384}
+  - component: {fileID: 114660777804172722}
   m_Layer: 8
   m_Name: P1_
   m_TagString: Player
@@ -628,7 +628,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stun: {fileID: 8300000, guid: 42922acd60044694d9e636b8e48e4e2f, type: 3}
---- !u!114 &114650948430568646
+--- !u!114 &114660777804172722
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -636,13 +636,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1468218356738520}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3f0fbb4dad84104aa5bbd34c4024209, type: 3}
+  m_Script: {fileID: 11500000, guid: 34f6a3bf40c5949439072f2a67050375, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mouseSensitivityX: 1
   mouseSensitivityY: 1
   minDistanceToGround: 1
-  walkSpeed: 15
+  walkSpeed: 12
   playerID: P1_
 --- !u!114 &114973572427077426
 MonoBehaviour:

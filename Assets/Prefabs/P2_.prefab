@@ -647,13 +647,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1097812634406634}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3f0fbb4dad84104aa5bbd34c4024209, type: 3}
+  m_Script: {fileID: 11500000, guid: 34f6a3bf40c5949439072f2a67050375, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mouseSensitivityX: 1
   mouseSensitivityY: 1
   minDistanceToGround: 1
-  walkSpeed: 15
+  walkSpeed: 12
   playerID: P2_
 --- !u!114 &114837095322983618
 MonoBehaviour:

@@ -45,6 +45,7 @@ public class PlayerController : MonoBehaviour {
 		
 		Vector3 moveDir = new Vector3(inputX,0, inputY);
 		if (moveDir.magnitude > 1)
+			Debug.Log("Hi:");
 			moveDir = moveDir.normalized;
 		if(moveDir.magnitude != 0)
 			body.transform.rotation = Quaternion.LookRotation (moveDir);
