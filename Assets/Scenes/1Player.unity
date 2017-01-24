@@ -1467,16 +1467,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 14
       objectReference: {fileID: 0}
-    - target: {fileID: 114383426440963644, guid: 8dc9c03ccb263dd4b8719cdc425c6ccd,
-        type: 2}
-      propertyPath: gameOverCanvas
-      value: 
-      objectReference: {fileID: 201036045}
-    - target: {fileID: 114604553902493016, guid: 8dc9c03ccb263dd4b8719cdc425c6ccd,
-        type: 2}
-      propertyPath: pauseCanvas
-      value: 
-      objectReference: {fileID: 1100286953}
     - target: {fileID: 114651431018895166, guid: 8dc9c03ccb263dd4b8719cdc425c6ccd,
         type: 2}
       propertyPath: spawnPoints.Array.data[0]
@@ -1507,16 +1497,16 @@ Prefab:
       propertyPath: spawnPoints.Array.data[5]
       value: 
       objectReference: {fileID: 1364342506}
-    - target: {fileID: 114651431018895166, guid: 8dc9c03ccb263dd4b8719cdc425c6ccd,
+    - target: {fileID: 114604553902493016, guid: 8dc9c03ccb263dd4b8719cdc425c6ccd,
         type: 2}
-      propertyPath: waveEnemyIncrease
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114651431018895166, guid: 8dc9c03ccb263dd4b8719cdc425c6ccd,
+      propertyPath: pauseCanvas
+      value: 
+      objectReference: {fileID: 1100286953}
+    - target: {fileID: 114383426440963644, guid: 8dc9c03ccb263dd4b8719cdc425c6ccd,
         type: 2}
-      propertyPath: secBetweenSpawn
-      value: 3
-      objectReference: {fileID: 0}
+      propertyPath: gameOverCanvas
+      value: 
+      objectReference: {fileID: 201036045}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8dc9c03ccb263dd4b8719cdc425c6ccd, type: 2}
   m_IsPrefabParent: 0

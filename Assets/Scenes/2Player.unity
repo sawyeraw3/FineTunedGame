@@ -1710,12 +1710,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
-    - target: {fileID: 114584313227468936, guid: 770333cc685dfea4e8ae3191fd4f9e76,
-        type: 2}
-      propertyPath: pauseCanvas
-      value: 
-      objectReference: {fileID: 1100286953}
-    - target: {fileID: 114888189933621224, guid: 770333cc685dfea4e8ae3191fd4f9e76,
+    - target: {fileID: 114771924544647424, guid: 770333cc685dfea4e8ae3191fd4f9e76,
         type: 2}
       propertyPath: gameOverCanvas
       value: 
@@ -1750,11 +1745,16 @@ Prefab:
       propertyPath: spawnPoints.Array.data[5]
       value: 
       objectReference: {fileID: 1364342506}
-    - target: {fileID: 114771924544647424, guid: 770333cc685dfea4e8ae3191fd4f9e76,
+    - target: {fileID: 114888189933621224, guid: 770333cc685dfea4e8ae3191fd4f9e76,
         type: 2}
       propertyPath: gameOverCanvas
       value: 
       objectReference: {fileID: 201036045}
+    - target: {fileID: 114584313227468936, guid: 770333cc685dfea4e8ae3191fd4f9e76,
+        type: 2}
+      propertyPath: pauseCanvas
+      value: 
+      objectReference: {fileID: 1100286953}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 770333cc685dfea4e8ae3191fd4f9e76, type: 2}
   m_IsPrefabParent: 0

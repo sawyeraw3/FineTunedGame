@@ -30,6 +30,7 @@ GameObject:
   - component: {fileID: 114767038082490612}
   - component: {fileID: 114949073909673620}
   - component: {fileID: 114089563216794816}
+  - component: {fileID: 114850238217287444}
   m_Layer: 0
   m_Name: 2PlayerLevelManager
   m_TagString: LevelManager
@@ -280,6 +281,18 @@ MonoBehaviour:
   - {fileID: 8300000, guid: e5a17b559b445c64fa980f2020f11909, type: 3}
   - {fileID: 8300000, guid: 2a5b853a0110600458eb36f9a638de0b, type: 3}
   playerID: P2_
+--- !u!114 &114850238217287444
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1583751131568252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e546a2fa4128d14d90a7fb9ec8a6b1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hideCursor: 1
 --- !u!114 &114888189933621224
 MonoBehaviour:
   m_ObjectHideFlags: 1
