@@ -14,6 +14,7 @@ public class EmitRings : MonoBehaviour {
 	public float emitLifeSpan;
 	public float maxDamageDealt;
 	public float waveSpeed = 5;
+	public string playerID;
 
 	public AudioClip noise;
 	GameObject playerBody;
@@ -44,12 +45,12 @@ public class EmitRings : MonoBehaviour {
 
 	void Update()
 	{
-		if (Input.GetButtonDown("Fire2") && curFrequency < 35) {
+		if (Input.GetButtonDown(playerID + "Fire2") && curFrequency < 35) {
 			curFrequency += 5;
 			texts[0].text = "Hz: " + curFrequency.ToString();
 			freqIndicator.value = (curFrequency / 5) - 2;
 			setColor (playerBody, curFrequency);
-		} else if (Input.GetButtonDown("Fire3") && curFrequency > 10) {
+		} else if (Input.GetButtonDown(playerID + "Fire3") && curFrequency > 10) {
 			curFrequency -= 5;
 			texts[0].text = "Hz: " + curFrequency.ToString();
 			freqIndicator.value = (curFrequency / 5) - 2;
@@ -58,7 +59,7 @@ public class EmitRings : MonoBehaviour {
 
 		timer += Time.deltaTime;
 
-		if (Input.GetButtonDown("Fire1") && timer >= emitDelay){
+		if (Input.GetButtonDown(playerID + "Fire1") && timer >= emitDelay){
 			center = ballSpawn.transform.position;
 
 			for (int i = 0; i < numParts; i++)

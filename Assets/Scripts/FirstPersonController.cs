@@ -8,6 +8,7 @@ public class FirstPersonController : MonoBehaviour {
 	public float mouseSensitivityY = 1;
 	public float minDistanceToGround = 1;
 	public float walkSpeed = 6;
+	public string playerID;
 	GameObject body;
 	
 	// System vars
@@ -35,8 +36,8 @@ public class FirstPersonController : MonoBehaviour {
 		*/
 
 		// Calculate movement:
-		float inputX = Input.GetAxisRaw("Horizontal");
-		float inputY = Input.GetAxisRaw("Vertical");
+		float inputX = Input.GetAxisRaw(playerID + "Horizontal");
+		float inputY = Input.GetAxisRaw(playerID + "Vertical");
 		
 		Vector3 moveDir = new Vector3(inputX,0, inputY);
 		if (moveDir.magnitude > 1)
