@@ -57,8 +57,8 @@ public class GetHit : MonoBehaviour {
 			re.enabled = true;
 		controller.enabled = true;
 		emitter.enabled = true;
-		yield return new WaitForSeconds (1f);
-		collide.gameObject.layer = 8;
-		collide1.gameObject.layer = 8;
+		yield return new WaitForSeconds (1.5f);
+		collide.gameObject.layer = 9;
+		collide1.gameObject.layer = 9;
 	}
 }

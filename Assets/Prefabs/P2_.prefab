@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 208860467052676228}
   - component: {fileID: 135394211531468390}
   - component: {fileID: 114837095322983618}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: P2_
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4135643908811928}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: spider dude
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 33799599800339144}
   - component: {fileID: 23388223332634540}
   - component: {fileID: 65317796151297016}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Structure
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,8 +73,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4713843226954972}
-  - component: {fileID: 81684161556129672}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +88,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4798740180674916}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: main__highlights.stl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +104,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4294585609517504}
   - component: {fileID: 82340841544432714}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: BallSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +119,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4736184263577634}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: main_joints.stl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138,7 +137,7 @@ GameObject:
   - component: {fileID: 20629342821089222}
   - component: {fileID: 92526331851709498}
   - component: {fileID: 124560922282114772}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: P2_Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -155,7 +154,7 @@ GameObject:
   - component: {fileID: 4148636099078144}
   - component: {fileID: 33825557054689332}
   - component: {fileID: 23771880098651636}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Highlights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -172,7 +171,7 @@ GameObject:
   - component: {fileID: 4425648115517772}
   - component: {fileID: 33083976541944350}
   - component: {fileID: 23858846550049410}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Joints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,7 +186,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4113321461234658}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: main__structure.stl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -394,7 +393,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: f43df0ab4001c4d469f416fb5e3ad609, type: 2}
+  - {fileID: 2100000, guid: e72a0207dabc8334aac8fc4a341d232c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -522,13 +521,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 19.985334, y: 17.95291, z: 31.004908}
   m_Center: {x: 0.24411762, y: 0.24880505, z: 9.572851}
---- !u!81 &81684161556129672
-AudioListener:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1470142082250794}
-  m_Enabled: 1
 --- !u!82 &82340841544432714
 AudioSource:
   m_ObjectHideFlags: 1

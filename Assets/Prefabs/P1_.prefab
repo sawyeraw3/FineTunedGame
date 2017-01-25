@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4778209245072942}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: main__structure.stl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,7 +34,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4352554666506806}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: spider dude
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ GameObject:
   - component: {fileID: 20444517284376952}
   - component: {fileID: 92456615760305794}
   - component: {fileID: 124450390171735272}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: P1_Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ GameObject:
   - component: {fileID: 33338781278403454}
   - component: {fileID: 23101114697173658}
   - component: {fileID: 65864398054629796}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Structure
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 4512298127181948}
   - component: {fileID: 33870878437085518}
   - component: {fileID: 23652216512543460}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Highlights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 135565529966353146}
   - component: {fileID: 114289968987713384}
   - component: {fileID: 114660777804172722}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: P1_
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4852944187121602}
   - component: {fileID: 82830357620062224}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: BallSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,7 +139,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4884754106850134}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: main__highlights.stl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,7 +154,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4021366590909362}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: main_joints.stl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -170,7 +170,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4998330446561084}
   - component: {fileID: 81164414362810934}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,7 +187,7 @@ GameObject:
   - component: {fileID: 4721185030766766}
   - component: {fileID: 33171817386923966}
   - component: {fileID: 23324626588427944}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Joints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
