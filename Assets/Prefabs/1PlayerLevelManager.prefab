@@ -261,7 +261,7 @@ MonoBehaviour:
   secBetweenSpawn: 3
   waveEnemyIncrease: 5
   timeBetweenWaves: 8
-  difficultySpread: 20
+  difficultySpread: 10
   upgradeSpeed: 2
   newWave: {fileID: 8300000, guid: 65d27ff39eae28a43a58c4eb91baeadf, type: 3}
   cols: []

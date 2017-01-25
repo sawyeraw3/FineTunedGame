@@ -816,6 +816,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1892846857223922, guid: 21dea01786857554c969a602d15c0e0e, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1892846857223922, guid: 21dea01786857554c969a602d15c0e0e, type: 2}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 21dea01786857554c969a602d15c0e0e, type: 2}
   m_IsPrefabParent: 0
@@ -1507,6 +1515,11 @@ Prefab:
       propertyPath: gameOverCanvas
       value: 
       objectReference: {fileID: 201036045}
+    - target: {fileID: 114651431018895166, guid: 8dc9c03ccb263dd4b8719cdc425c6ccd,
+        type: 2}
+      propertyPath: difficultySpread
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8dc9c03ccb263dd4b8719cdc425c6ccd, type: 2}
   m_IsPrefabParent: 0

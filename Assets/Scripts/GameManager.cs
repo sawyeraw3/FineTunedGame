@@ -78,8 +78,9 @@ public class GameManager : MonoBehaviour {
 		GameObject newEnemy = Instantiate (enemyTypes[e], spawnPoints [whichSpawn].transform.position, Quaternion.identity) as GameObject;
 		int i = Random.Range (0, 6);
 		Color c = cols [i];
-		Renderer rend = newEnemy.transform.FindChild ("Colored").GetComponent<Renderer>();
-		rend.material.color = c;
+		Renderer[] rends = newEnemy.transform.FindChild ("Colored").GetComponentsInChildren<Renderer>();
+		foreach(Renderer rend in rends)
+			rend.material.color = c;
 		Light[] lights = newEnemy.GetComponentsInChildren<Light> ();
 		foreach (Light l in lights) {
 			l.color = c;
