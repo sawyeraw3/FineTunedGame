@@ -34,7 +34,7 @@ public class PylonHealth : MonoBehaviour {
 	}
 
 	public void BreakTower() {
-		gameObject.SetActive (false);
+		//gameObject.SetActive (false);
 		Instantiate (rubble, transform.position, transform.rotation);
 	}
 }

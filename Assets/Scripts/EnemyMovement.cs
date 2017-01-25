@@ -46,7 +46,7 @@ public class EnemyMovement : MonoBehaviour {
 				agent.destination = target.transform.position;
 				if (Vector3.Distance (gameObject.transform.position, target.transform.position) <= minDistanceToObject) {
 					agent.Stop ();
-					if (target != null && target != GameObject.Find("Player") && timer >= timeBetweenHits) {
+					if (target != GameObject.Find ("Player") && timer >= timeBetweenHits) {
 						target.GetComponentInParent<PylonHealth> ().TakeDamage (damagePerHit);
 						sound.clip = attack;
 						sound.volume = 1;
@@ -71,6 +71,11 @@ public class EnemyMovement : MonoBehaviour {
 						}
 					}
 				}
+			} else {
+				whichPylon = Random.Range (0, vars.pylons.Count);
+				target = vars.pylons [whichPylon];
+				agent.destination = target.transform.position;
+				agent.Resume ();
 			}
 		} else if (GameObject.FindGameObjectWithTag ("MasterPylon")) {
 			minDistanceToObject = minDistanceToMaster;
@@ -97,8 +102,7 @@ public class EnemyMovement : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other) {
-		if (other.gameObject.tag == "Player") {
-			//agent.Stop();
+		if (other.gameObject.tag == "Player" && (target != null) && (transform.position - target.transform.position).magnitude > 15) {
 			minDistanceTemp = minDistanceToObject;
 			minDistanceToObject = 0;
 			agent.stoppingDistance = 0;
@@ -107,31 +111,24 @@ public class EnemyMovement : MonoBehaviour {
 			prevTarget = target;
 			target = other.gameObject;
 			agent.destination = target.transform.position;
-			//agent.Resume ();
 		}
 	}
 	void OnTriggerExit(Collider other) {
-		if (other.gameObject.tag == "Player") {
-			agent.Stop();
+		if (other.gameObject.tag == "Player" && target == other.gameObject) {
 			agent.angularSpeed = 90;
 			agent.speed = 3.5f;
 			target = prevTarget;
 			minDistanceToObject = minDistanceTemp;
 			agent.destination = target.transform.position;
-			agent.Resume ();
 		}
 	}
 	void OnCollisionEnter(Collision other) {
-		if (other.gameObject.tag == "Player") {
-			if (target == other.gameObject) {
-				agent.Stop();
-				agent.angularSpeed = 90;
-				agent.speed = 3.5f;
-				target = prevTarget;
-				minDistanceToObject = minDistanceTemp;
-				agent.destination = target.transform.position;
-				agent.Resume ();
-			}
+		if (other.gameObject.tag == "Player" && target == other.gameObject) {
+			agent.angularSpeed = 90;
+			agent.speed = 3.5f;
+			target = prevTarget;
+			minDistanceToObject = minDistanceTemp;
+			agent.destination = target.transform.position;
 		}
 	}
 }
