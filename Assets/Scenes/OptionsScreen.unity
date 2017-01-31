@@ -459,7 +459,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e546a2fa4128d14d90a7fb9ec8a6b1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hideCursor: 1
+  hideCursor: 0
 --- !u!4 &548947736
 Transform:
   m_ObjectHideFlags: 0
@@ -847,7 +847,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 902070820}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114688234198381754, guid: 197fd4ed31aa6ff4c99a492eaa5d2763,
+          type: 2}
+        m_MethodName: loadMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &902070820

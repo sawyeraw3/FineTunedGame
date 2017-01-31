@@ -27,4 +27,11 @@ public class MenuManager : MonoBehaviour {
 	public void loadMainMenu(){
 		Application.LoadLevel("MenuLevel");
 	}
+
+	//loads the othe menu
+	public void loadOptionsMenu(){
+		Application.LoadLevel("OptionsScreen");
+	}
+
+
 }
