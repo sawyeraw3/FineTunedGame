@@ -597,7 +597,7 @@ MonoBehaviour:
   m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 902070817}
   m_sendNavigationEvents: 1
   m_DragThreshold: 3
 --- !u!4 &724770255
