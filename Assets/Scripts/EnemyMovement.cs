@@ -94,8 +94,11 @@ public class EnemyMovement : MonoBehaviour {
 					sound.volume = 1;
 					sound.Play ();
 					timer = 0f;
-				}
-			}
+				}										
+										
+											// you guys should add more comments
+									
+			}                                                                 
 		} else {
 			agent.Stop();
 		}

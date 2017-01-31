@@ -22,4 +22,9 @@ public class MenuManager : MonoBehaviour {
 	public void quitApp() {
 		Application.Quit ();
 	}
+
+	//loads the menu level bitchhhhhh
+	public void loadMainMenu(){
+		Application.LoadLevel("MenuLevel");
+	}
 }
