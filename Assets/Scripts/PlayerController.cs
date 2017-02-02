@@ -61,7 +61,10 @@ public class PlayerController : MonoBehaviour {
 		}*/
 		targetMoveAmount = moveDir * walkSpeed;
 		moveAmount = Vector3.SmoothDamp(moveAmount,targetMoveAmount,ref smoothMoveVelocity,.15f);
-		
+
+		// Apply movement to rigidbody
+		Vector3 localMove = transform.TransformDirection(moveAmount) * Time.fixedDeltaTime;
+		rigidbody.MovePosition(rigidbody.position + localMove);
 		
 		//Jump condition
 		/*
@@ -83,11 +86,5 @@ public class PlayerController : MonoBehaviour {
 			grounded = false;
 		}*/
 		
-	}
-	
-	void FixedUpdate() {
-		// Apply movement to rigidbody
-		Vector3 localMove = transform.TransformDirection(moveAmount) * Time.fixedDeltaTime;
-		rigidbody.MovePosition(rigidbody.position + localMove);
 	}
 }
